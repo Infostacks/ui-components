@@ -1,6 +1,6 @@
 {
   "name": "@infostacks/ui-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "rollup": "rollup -c",
     "test": "echo \"Bypassing tests for now\" && exit 0"
