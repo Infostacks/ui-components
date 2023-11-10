@@ -2,9 +2,13 @@
   "name": "@infostacks/ui-components",
   "version": "1.0.0",
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/Infostacks/ui-components",
+  "repository": {
+    "type": "git",
+    "url" :"https://github.com/Infostacks/ui-components"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
