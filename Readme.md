@@ -35,6 +35,7 @@ To check the ui of the component before publishin, either to check visibility or
     2. Example code is available for your understanding.
     3. Start the server using command
     ```http-server```
+    or you can use 'Go Live' from VS code.
     4. goto browser and navigate to url 'http://localhost:8080/'. You can see your component here.
     5. You have to refresh every time you make change in file....
 
