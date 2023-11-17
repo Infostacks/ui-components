@@ -148,6 +148,7 @@ const Container = () => {
                 placeholder="Password"
                 svgStart={"password"}
                 onClick={()=>{setEye(!eye)}}
+                type={eye? "password" : 'text'}
                 svgEnd={eye ? "eyeOpen" : 'eyeClosed'}
                 error
             />
