@@ -67,7 +67,7 @@ function HInputFeild({type, value, onChange, onClick, placeholder, background, s
                 borderRadius: '25px',
                 padding: '15px 20px',
                 color: '#463F7E',
-                border: `1px solid ${background ? background : error ? error : 'grey'}`
+                border: `1px solid ${background ? background : error ? '#FFD2D2' : 'grey'}`
             }}
         >
             {
