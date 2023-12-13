@@ -1,13 +1,13 @@
 {
   "name": "@infostacks/ui-components",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "scripts": {
     "rollup": "rollup -c",
     "test": "echo \"Bypassing tests for now\" && exit 0"
   },
   "repository": {
     "type": "git",
-    "url" :"https://github.com/Infostacks/ui-components"
+    "url": "https://github.com/Infostacks/ui-components"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +17,23 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/react": "^18.2.37",
-    "react": "^18.2.0",
     "rollup": "^4.3.0",
     "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "styled-components": ">=6.0.7",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.18",
+    "@mui/material": "^5.14.18",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.6",
+    "@mui/system": "^5.15.0",
+    "@mui/x-date-pickers": "^6.18.3"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -29,41 +41,5 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "dependencies": {
-    "ansi-styles": "^3.2.1",
-    "balanced-match": "^1.0.2",
-    "brace-expansion": "^2.0.1",
-    "builtin-modules": "^3.3.0",
-    "chalk": "^2.4.2",
-    "color-convert": "^1.9.3",
-    "color-name": "^1.1.3",
-    "commondir": "^1.0.1",
-    "csstype": "^3.1.2",
-    "deepmerge": "^4.3.1",
-    "escape-string-regexp": "^1.0.5",
-    "estree-walker": "^2.0.2",
-    "fs.realpath": "^1.0.0",
-    "function-bind": "^1.1.2",
-    "glob": "^8.1.0",
-    "has-flag": "^3.0.0",
-    "hasown": "^2.0.0",
-    "inflight": "^1.0.6",
-    "inherits": "^2.0.4",
-    "is-builtin-module": "^3.2.1",
-    "is-core-module": "^2.13.1",
-    "is-module": "^1.0.0",
-    "is-reference": "^1.2.1",
-    "js-tokens": "^4.0.0",
-    "loose-envify": "^1.4.0",
-    "magic-string": "^0.30.5",
-    "minimatch": "^5.1.6",
-    "once": "^1.4.0",
-    "path-parse": "^1.0.7",
-    "picomatch": "^2.3.1",
-    "resolve": "^1.22.8",
-    "supports-color": "^5.5.0",
-    "supports-preserve-symlinks-flag": "^1.0.0",
-    "wrappy": "^1.0.2"
-  },
   "description": ""
 }
