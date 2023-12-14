@@ -68,6 +68,7 @@ const ProfileEditTextField = ({
             },
             "& .Mui-focused": {
                 backgroundColor: "white",
+                padding: '3px',
                 border: "2px solid #788BFF",
             },
             ...sx,
