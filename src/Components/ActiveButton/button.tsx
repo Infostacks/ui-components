@@ -20,7 +20,7 @@ const ActiveButton = ({
     startIcon,
     endIcon,
     sx,
-    component
+    component='button'
 }: ActiveButtonProps) => (
   <Button
     sx={{
