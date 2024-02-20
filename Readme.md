@@ -30,13 +30,10 @@ To install a package in your project.
 ### Check Component before Publishing
 To check the ui of the component before publishin, either to check visibility or functionality.
 
-    1. Copy/Paste the component in App.js file without import/export module.
-    (Note: write a single simple component here. Additional import should be removed.)
-    2. Example code is available for your understanding.
-    3. Start the server using command
-    ```http-server```
-    or you can use 'Go Live' from VS code.
-    4. goto browser and navigate to url 'http://localhost:8080/'. You can see your component here.
-    5. You have to refresh every time you make change in file....
+    1. run command
+    ```
+        npm run storybook
+    ```
+    For further details: https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/
 
 HAPPY HACKING!!!!
