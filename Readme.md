@@ -36,4 +36,13 @@ To check the ui of the component before publishin, either to check visibility or
     ```
     For further details: https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/
 
+### Update Storybook
+to update the github [web page](https://infostacks.github.io/ui-components/?path=/docs/configure-your-project--docs)
+
+run command 
+```
+npm run deploy-storybook
+```
+(authenticate github, and hurray!!!!)
+
 HAPPY HACKING!!!!
