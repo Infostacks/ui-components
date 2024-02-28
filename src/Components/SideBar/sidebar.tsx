@@ -14,8 +14,6 @@ export interface SideBarProps {
   isXsScreen?: boolean
 }
 
-const memoizedSVG = React.memo
-
 const SideBar = ({
   title,
   onClick,
