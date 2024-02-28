@@ -114,5 +114,8 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
     "noImplicitAny": false,
+    "plugins": [{
+      "name": "typescript-plugin-css-modules"
+    }]
   }
 }
