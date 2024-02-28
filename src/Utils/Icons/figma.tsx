@@ -1,8 +1,10 @@
 import React from "react";
 
-
-let figmaIcons   = {
-  dashBoardIcons: (
+interface figmaIconsProps {
+  [key:string]: ((stroke?:string)=>React.JSX.Element);
+}
+let figmaIcons:figmaIconsProps   = {
+  dashBoardIcons: () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="30"
@@ -34,7 +36,7 @@ let figmaIcons   = {
       </defs>
     </svg>
   ),
-  collapseIcons: (
+  collapseIcons: () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -50,7 +52,7 @@ let figmaIcons   = {
       />
     </svg>
   ),
-  sideBarDashBoardIcons: (fill?:string) => (
+  sideBarDashBoardIcons: (fill) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
@@ -76,7 +78,7 @@ let figmaIcons   = {
       />
     </svg>
   ),
-  dashBoardProfileIcons: (stroke?:string) => (
+  dashBoardProfileIcons: (stroke) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
@@ -107,7 +109,7 @@ let figmaIcons   = {
       />
     </svg>
   ),
-  postJobIcons: (stroke?:string) => (
+  postJobIcons: (stroke) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="21"

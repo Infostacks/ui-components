@@ -4,34 +4,64 @@ import figmaIcons from "../../Utils/Icons/figma";
 import style from "./style";
 import ListItem from "./listItem";
 import { Typography } from "@mui/material";
-
+import { DashboardItem } from '../../Utils/Constants/dashboardItemList';
 export interface SideBarProps {
-  isCollapsed: boolean;
-  handleCollapseToggle: () => void;
+  title: string;
+  onClick?: Function;
   activeSection: string;
   handleSectionClick: (section: string) => void;
+  listItems: [DashboardItem],
+  isXsScreen?: boolean
 }
 
+const memoizedSVG = React.memo
+
 const SideBar = ({
-  isCollapsed,
-  handleCollapseToggle,
+  title,
+  onClick,
   activeSection,
   handleSectionClick,
-}:SideBarProps) => {
+  listItems,
+  isXsScreen = false,
+}: SideBarProps) => {
+  const [collapsed, setCollapsed] = React.useState(true);
+
+  const handleCollapseToggle = () => {
+    if (isXsScreen) setCollapsed(true);
+    else setCollapsed(prev => !prev);
+    if (onClick) onClick();
+  };
 
   return (
-    <Box sx={style.containerBoxSideBar(isCollapsed)}>
+    <Box sx={style.containerBoxSideBar(collapsed)}>
       <Box sx={style.containerBoxSideBarTop}>
-        <Typography sx={style.logoTypo}>
-          {figmaIcons.dashBoardIcons}
-          {!isCollapsed && "Candidate"}
-        </Typography>
-        {/* <ListItem isCollapsed={isCollapsed} activeSection={activeSection} handleSectionClick={handleSectionClick}/> */}
+        <Box
+          sx={style.childTransition(collapsed)}
+        >
+          {figmaIcons.dashBoardIcons()}
+          <Typography sx={style.logoTypo(collapsed)}>
+            {!collapsed &&
+              title
+            }
+          </Typography>
+        </Box>
+        <ListItem
+          isCollapsed={collapsed}
+          activeSection={activeSection}
+          handleSectionClick={handleSectionClick}
+          listItems={listItems}
+        />
       </Box>
-      <Box sx={{ bgcolor: "" }}>
-        <Typography sx={style.collapseTypo} onClick={handleCollapseToggle}>
-          {figmaIcons.collapseIcons} {!isCollapsed && "Collapse menu"}
-        </Typography>
+      <Box>
+        <Box
+          sx={style.childCTransition(collapsed)}
+          onClick={handleCollapseToggle}
+        >
+          {figmaIcons.collapseIcons()}
+          <Typography sx={style.collapseTypo(collapsed)}>
+            {!collapsed && "Collapse menu"}
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );

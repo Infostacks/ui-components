@@ -1,12 +1,12 @@
-import { React } from 'react';
+import React from 'react';
 import figmaIcons from "../../Utils/Icons/figma";
 
 
 export interface DashboardItem{
-    label: string,
-    icon: React.ReactNode,
-    section: string,
-    path: string,
+    label: string;
+    icon: ((stroke?:string)=>React.JSX.Element);
+    section: string;
+    path: string;
 }
 
 const dashboardItemList:DashboardItem[]=[
@@ -21,13 +21,7 @@ const dashboardItemList:DashboardItem[]=[
         icon: figmaIcons.dashBoardProfileIcons,
         section: "profile",
         path: "/dashboard/profile",
-      },
-      {
-        label: "Post a Job",
-        icon: figmaIcons.postJobIcons,
-        section: "Post a job",
-        path: "/dashboard/postajob",
-      },
+      }
 ]
 
 export default dashboardItemList;

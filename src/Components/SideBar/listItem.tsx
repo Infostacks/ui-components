@@ -1,37 +1,49 @@
 import { Box, Typography } from '@mui/material';
-import dashboardItemList,{ DashboardItem } from '../../Utils/Constants/dashboardItemList';
 import React from 'react'
 import style from './style';
 import { useNavigate } from 'react-router-dom';
-// import  from '../../Utils/Constants/dashboardItemList';
 
-
-interface ListItemProps{
+interface ListItemProps {
   isCollapsed: boolean,
   activeSection: string,
-  handleSectionClick: (section: string) => void
+  listItems: [any],
+  handleSectionClick: (section: string) => void;
 }
 
-const ListItem = ({isCollapsed,activeSection,handleSectionClick}:ListItemProps) => {
-    const navigate = useNavigate();
+const ListItem = ({ isCollapsed, activeSection, handleSectionClick, listItems }: ListItemProps) => {
+  const navigate = useNavigate();
   return (
-    <Box sx={{ padding: isCollapsed ? "7px" : "12px 16px", bgcolor: "" }}>
-    {dashboardItemList.map((menuItem:DashboardItem,index:number) => (
-      <Typography
-        key={index}
-        sx={style.menuItemTypo(activeSection === menuItem.section)}
-        onClick={() => {
-          handleSectionClick(menuItem.section);
-          navigate(menuItem.path);
-        }}
-      >
-        {menuItem.icon(
-          activeSection === menuItem.section ? "#4950FF" : "#292D32"
-        )}
-        {!isCollapsed && menuItem.label}
-      </Typography>
-    ))}
-  </Box>
+    <Box sx={{ padding: "7px" }}>
+      {
+        listItems.map((menuItem) => (
+          <Box
+            sx={{
+              ...style.childTransition(isCollapsed),
+              ...style.menuItemTypo(activeSection === menuItem.section, isCollapsed)
+            }}>
+            {menuItem.icon(
+              activeSection === menuItem.section ? "#4950FF" : "#292D32"
+            )}
+            <Typography
+              key={menuItem.path}
+              sx={{
+                ...style.collapseTypo(isCollapsed),
+                ...{
+                  color: activeSection === menuItem.section ? "#4950FF" : "",
+                  fontWeight: activeSection === menuItem.section ? 600 : 500,
+                  lineHeight: "24px",
+                }
+              }}
+              onClick={() => {
+                handleSectionClick(menuItem.section);
+                navigate(menuItem.path);
+              }}
+            >
+              {!isCollapsed && menuItem.label}
+            </Typography>
+          </Box>
+        ))}
+    </Box>
   )
 }
 

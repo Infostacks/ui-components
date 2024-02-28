@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileEditTextField } from '../Components';
 
 const meta = {
-    title: 'Recruitment/ProfileEditTextField',
+    title: 'Text Fields/ProfileEditTextField',
     component: ProfileEditTextField,
 
     parameters: {

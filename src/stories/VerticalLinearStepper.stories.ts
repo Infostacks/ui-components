@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {CustomVerticalLinearStepper} from '../Components';
 
 const meta = {
-    title: 'Recruitment/VerticalLinearStepper',
+    title: 'Steppers/VerticalLinearStepper',
     component: CustomVerticalLinearStepper,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

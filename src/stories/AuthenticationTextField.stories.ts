@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AuthenticationTextField } from '../Components';
 
 const meta = {
-    title: 'Recruitment/AuthenticationTextField',
+    title: 'Text Fields/AuthenticationTextField',
     component: AuthenticationTextField,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
