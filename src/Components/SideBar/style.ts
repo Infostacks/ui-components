@@ -1,6 +1,5 @@
 const style = {
   containerBoxSideBar: (isCollapsed:boolean) => ({
-    bgcolor: "",
     display: "flex",
     width: isCollapsed ? "70px" : "265px",
     flexDirection: "column",
@@ -8,6 +7,7 @@ const style = {
     justifyContent: "space-between",
     borderRight: "1px solid  #E5E5E5",
     transition: 'width 0.3s ease-in-out',
+    paddingTop: '0.5rem',
   }),
   containerBoxSideBarTop: {
     display: "flex",
@@ -32,6 +32,7 @@ const style = {
   childCTransition: (isCollapsed:boolean) => ({
     cursor: "pointer",
     display: "flex",
+    width: '100%',
     alignItems: 'center',
     gap: !isCollapsed ? '10px' : '0px',
     padding: !isCollapsed ? "12px 16px" : '12px 4px 12px 16px',

@@ -29,7 +29,7 @@ export const Candidate: Story = {
         title: 'Candidate',
         activeSection: 'dashboard',
         onClick:()=>{console.log('onclick')},
-        handleSectionClick: () => console.log('Clicked'),
+        handleSectionClick: (item) => console.log(item),
         listItems: dashboardItemList
     },
     parameters: {

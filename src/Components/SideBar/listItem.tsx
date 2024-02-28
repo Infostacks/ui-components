@@ -20,7 +20,12 @@ const ListItem = ({ isCollapsed, activeSection, handleSectionClick, listItems }:
             sx={{
               ...style.childTransition(isCollapsed),
               ...style.menuItemTypo(activeSection === menuItem.section, isCollapsed)
-            }}>
+            }}
+            onClick={() => {
+              handleSectionClick(menuItem.section);
+              navigate(menuItem.path);
+            }}
+            >
             {menuItem.icon(
               activeSection === menuItem.section ? "#4950FF" : "#292D32"
             )}
@@ -33,10 +38,6 @@ const ListItem = ({ isCollapsed, activeSection, handleSectionClick, listItems }:
                   fontWeight: activeSection === menuItem.section ? 600 : 500,
                   lineHeight: "24px",
                 }
-              }}
-              onClick={() => {
-                handleSectionClick(menuItem.section);
-                navigate(menuItem.path);
               }}
             >
               {!isCollapsed && menuItem.label}

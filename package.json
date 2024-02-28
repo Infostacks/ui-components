@@ -1,6 +1,6 @@
 {
   "name": "@infostacks/ui-components",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "homepage": "https://infostacks.github.io/ui-components",
   "scripts": {
     "rollup": "rollup -c",
