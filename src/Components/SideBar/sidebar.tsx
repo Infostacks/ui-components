@@ -22,7 +22,7 @@ const SideBar = ({
   listItems,
   isXsScreen = false,
 }: SideBarProps) => {
-  const [collapsed, setCollapsed] = React.useState(true);
+  const [collapsed, setCollapsed] = React.useState(isXsScreen);
 
   const handleCollapseToggle = () => {
     if (isXsScreen) setCollapsed(true);
