@@ -25,6 +25,7 @@
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
     "@storybook/addon-onboarding": "^1.0.11",
+    "storybook-addon-react-router-v6": "^2.0.10",
     "@storybook/blocks": "^7.6.17",
     "@storybook/react": "^7.6.17",
     "@storybook/react-webpack5": "^7.6.17",
@@ -50,6 +51,7 @@
     "@mui/x-date-pickers": "^6.18.3",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
+    "react-router-dom": ">=6.18.0",
     "styled-components": ">=6.0.7"
   },
   "main": "dist/cjs/index.js",

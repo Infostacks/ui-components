@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Loader } from '../Components';
 
 const meta = {
-    title: 'Common/Circle-Loader',
+    title: 'Loader/Circle-Loader',
     component: Loader,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
