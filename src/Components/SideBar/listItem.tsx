@@ -25,6 +25,7 @@ const ListItem = ({ isCollapsed, activeSection, handleSectionClick, listItems }:
               handleSectionClick(menuItem.section);
               navigate(menuItem.path);
             }}
+            key={menuItem.label}
             >
             {menuItem.icon(
               activeSection === menuItem.section ? "#4950FF" : "#292D32"
