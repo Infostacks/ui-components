@@ -8,7 +8,7 @@ const style = {
     borderRight: "1px solid  #E5E5E5",
     transition: 'width 0.3s ease-in-out',
     paddingTop: '0.5rem',
-    borderSizing: 'border-box',
+    boxSizing: 'border-box',
   }),
   containerBoxSideBarTop: {
     display: "flex",
