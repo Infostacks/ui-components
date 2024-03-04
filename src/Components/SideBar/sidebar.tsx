@@ -10,7 +10,7 @@ export interface SideBarProps {
   onClick?: Function;
   activeSection: string;
   handleSectionClick: (section: string) => void;
-  listItems: [DashboardItem],
+  listItems: DashboardItem[],
   isXsScreen?: boolean
 }
 
