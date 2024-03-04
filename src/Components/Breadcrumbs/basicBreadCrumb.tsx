@@ -12,7 +12,7 @@ export interface NavbarBreadcrumbsProps {
     sx?: any;
 }
 
-export default function NavbarBreadcrumbs({ breadClick, crumbClick, sx }) {
+export default function NavbarBreadcrumbs({ breadClick, crumbClick, sx }:NavbarBreadcrumbsProps) {
     const location = useLocation();
     const navigate = useNavigate()
     const crumbs = location.pathname.split('/').filter(url => url != '');

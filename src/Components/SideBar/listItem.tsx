@@ -2,11 +2,12 @@ import { Box, Typography } from '@mui/material';
 import React from 'react'
 import style from './style';
 import { useNavigate } from 'react-router-dom';
+import { DashboardItem } from '../../Utils/Constants/dashboardItemList';
 
 interface ListItemProps {
   isCollapsed: boolean,
   activeSection: string,
-  listItems: [any],
+  listItems: DashboardItem[],
   handleSectionClick: (section: string) => void;
 }
 
