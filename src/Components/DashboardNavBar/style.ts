@@ -17,6 +17,7 @@ const style = {
   },
   navBarInnerBox: {
     bgcolor: "",
+    minWidth: '150px',
     display: "flex",
     justifyContent: "space-between",
     padding: "12px",
