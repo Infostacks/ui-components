@@ -1,7 +1,8 @@
 const style = {
     box: {
         paddingLeft: '16px',
-        color: 'black'
+        color: 'black',
+        overflow: 'hidden',
     },
     link: {
         color: 'black',

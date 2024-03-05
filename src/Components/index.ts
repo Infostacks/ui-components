@@ -8,3 +8,6 @@ export {default as StackLoader} from './StackLoader';
 export {default as NavbarBreadcrumbs} from './Breadcrumbs'
 export {default as R_DashboardNavbar} from './DashboardNavBar';
 export {default as R_DashboardLayout} from './RecruitmentDashboardLayout';
+
+import { StorybookProvider } from '../Context/sampleContext';
+export {StorybookProvider};
