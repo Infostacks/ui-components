@@ -15,7 +15,7 @@ const meta : Meta = {
         title: {control: 'text'},
         activeSection: {control: 'text'},
         handleSectionClick: {control: 'function'},  
-        isXsScreen: {control: 'boolean'},
+        isSmallScreen : {control: 'boolean'},
         listItems: {control: 'object'},
     } 
 } 
