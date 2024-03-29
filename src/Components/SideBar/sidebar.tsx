@@ -11,7 +11,7 @@ export interface SideBarProps {
   activeSection: string;
   handleSectionClick: (section: string) => void;
   listItems: DashboardItem[],
-  isSmallScreen ?: boolean
+  isSmallScreen: boolean
 }
 
 const SideBar = ({
@@ -20,9 +20,13 @@ const SideBar = ({
   activeSection,
   handleSectionClick,
   listItems,
-  isSmallScreen  = false,
+  isSmallScreen=false,
 }: SideBarProps) => {
-  const [collapsed, setCollapsed] = React.useState(isSmallScreen );
+  const [collapsed, setCollapsed] = React.useState(isSmallScreen);
+
+  React.useEffect(() => {
+    setCollapsed(isSmallScreen);
+  }, [isSmallScreen]);
 
   const handleCollapseToggle = () => {
     if (isSmallScreen ) setCollapsed(true);
