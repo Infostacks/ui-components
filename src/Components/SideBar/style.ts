@@ -1,3 +1,5 @@
+const TRANSITION_TIME = '0.3s'
+
 const style = {
   containerBoxSideBar: (isCollapsed:boolean) => ({
     display: "flex",
@@ -6,7 +8,7 @@ const style = {
     height: "100vh",
     justifyContent: "space-between",
     borderRight: "1px solid  #E5E5E5",
-    transition: 'width 0.3s ease-in-out',
+    transition: `width ${TRANSITION_TIME} ease-in-out`,
     paddingTop: '0.5rem',
     boxSizing: 'border-box',
   }),
@@ -22,7 +24,7 @@ const style = {
     py: '12px',
     pl: 'clamp(4px, 2vw, 16px)',
     pr: isCollapsed ? '0px' : 'clamp(4px, 2vw, 16px)',
-    transition: 'all 0.6s ease',
+    transition: `all ${TRANSITION_TIME} ease`,
     height: '30px'
   }),
   logoTypo: (isCollapsed:boolean) => ({
@@ -32,7 +34,7 @@ const style = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     fontWeight: 700,
-    transition: 'all 0.4s linear',
+    transition: `all ${TRANSITION_TIME} linear`,
   }),
   childCTransition: (isCollapsed:boolean) => ({
     cursor: "pointer",
@@ -43,7 +45,7 @@ const style = {
     py: '12px',
     pl: 'clamp(4px, 2vw, 16px)',
     pr: isCollapsed ? '0px' : 'clamp(4px, 2vw, 16px)',
-    transition: 'all 0.4s linear',
+    transition: `all ${TRANSITION_TIME} linear`,
   }),
   collapseTypo: (isCollapsed:boolean) => ({
     color: "#676E85",
@@ -54,7 +56,7 @@ const style = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     maxWidth: isCollapsed ? '0%': '100%',
-    transition: 'all 0.4s linear',
+    transition: `all ${TRANSITION_TIME} linear`,
   }),
   menuItemTypo: (isActive:boolean, isCollapsed:boolean) => ({
     display: "flex",
@@ -66,7 +68,7 @@ const style = {
     pr: isCollapsed ? '0px' : 'clamp(4px, 2vw, 16px)',
     background: isActive ? "#E6ECFF" : "",
     borderRadius: "12px",
-    transition: 'all 0.4s ease',
+    transition: `all ${TRANSITION_TIME} linear`,
   }),
 };
 

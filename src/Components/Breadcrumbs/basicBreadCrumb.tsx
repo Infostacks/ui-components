@@ -10,9 +10,10 @@ export interface NavbarBreadcrumbsProps {
     breadClick?: Function;
     crumbClick?: Function;
     sx?: any;
+    separator?: React.ReactNode
 }
 
-export default function NavbarBreadcrumbs({ breadClick, crumbClick, sx }:NavbarBreadcrumbsProps) {
+export default function NavbarBreadcrumbs({ breadClick, crumbClick, sx, separator }:NavbarBreadcrumbsProps) {
     const location = useLocation();
     const navigate = useNavigate()
     const crumbs = location.pathname.split('/').filter(url => url != '');
@@ -32,7 +33,9 @@ export default function NavbarBreadcrumbs({ breadClick, crumbClick, sx }:NavbarB
         <Box role="presentation" onClick={handleClick}
             style={{ ...style.box, ...sx }}
         >
-            <Breadcrumbs aria-label="breadcrumb">
+            <Breadcrumbs 
+                separator={separator}
+                aria-label="breadcrumb">
                 {
                     crumbs.map((item, index) => {
                         if (index === crumbs.length - 1) {
