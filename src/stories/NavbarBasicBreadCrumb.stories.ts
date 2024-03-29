@@ -54,7 +54,9 @@ export const Two: Story = {
 };
 
 export const Three: Story = {
-  args: {},
+  args: {
+    separator: ">"
+  },
   parameters: {
     reactRouter: reactRouterParameters({
       location: {
