@@ -24,8 +24,6 @@ const SideBar = ({
 }: SideBarProps) => {
   const [collapsed, setCollapsed] = React.useState(isSmallScreen );
 
-  React.useEffect(()=> {}, [isXsScreen])
-
   const handleCollapseToggle = () => {
     if (isSmallScreen ) setCollapsed(true);
     else setCollapsed(prev => !prev);

@@ -10,7 +10,7 @@ export interface DashboardLayoutProps {
   dashboardItemList: DashboardItem[];
   activeSection: string;
   handleSectionClick: (section: string) => void;
-  isXsScreen: boolean;
+  isSmallScreen: boolean;
 }
 
 const R_DashboardLayout = (
@@ -18,7 +18,7 @@ const R_DashboardLayout = (
     dashboardItemList, 
     activeSection, 
     handleSectionClick, 
-    isXsScreen
+    isSmallScreen
   }:DashboardLayoutProps) => {
   return (
     <Box
@@ -28,7 +28,7 @@ const R_DashboardLayout = (
         activeSection={activeSection}
         handleSectionClick={handleSectionClick}
         title="Candidate"
-        isXsScreen={isXsScreen}
+        isSmallScreen={isSmallScreen}
         listItems={dashboardItemList}
       />
       <Box sx={style.parentBoxDashBoard}>

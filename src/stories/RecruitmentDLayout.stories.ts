@@ -24,7 +24,7 @@ export const HomePage: Story = {
     handleSectionClick: (section: string) => {
       console.log(section);
     },
-    isXsScreen: false,
+    isSmallScreen: false,
   },
   parameters: {
     // pass in some JSON props here, I don't know what you need
@@ -56,7 +56,7 @@ export const ProfilePage: Story = {
       handleSectionClick: (section: string) => {
         console.log(section);
       },
-      isXsScreen: false,
+      isSmallScreen: false,
     },
     parameters: {
       // pass in some JSON props here, I don't know what you need
