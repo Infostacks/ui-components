@@ -7,7 +7,7 @@ import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material/st
 import { ThemeProvider } from '@emotion/react';
 
 const meta: Meta = {
-    title: 'Deatils/JobsList Details',
+    title: 'Deatils/JobSearch Details',
     component: JobDetail,
     decorators: [
         withRouter
@@ -17,6 +17,7 @@ const meta: Meta = {
     tags: ['autodocs'],
     argTypes: {
         data: { control: 'object' },
+        applied: { control: 'boolean' }
         // total: { control: 'number' },
         // isSmallDev: {control: 'boolean'}
     }
@@ -40,6 +41,33 @@ export const Short: Story = {
     ],
     args: {
         data: data.jobs[0],
+        applied: false
+    },
+    parameters: {
+        reactRouter: reactRouterParameters({
+            location: {
+                path: "/jobs",
+            },
+            routing: {
+                path: "/jobs",
+            },
+        }),
+    }
+};
+
+export const View: Story = {
+    decorators: [
+        (Story) => (
+            <ThemeProvider theme={theme}>
+                <MUIThemeProvider theme={theme}>
+                    <Story />
+                </MUIThemeProvider>
+            </ThemeProvider>
+        )
+    ],
+    args: {
+        data: data.jobs[0],
+        applied: true
     },
     parameters: {
         reactRouter: reactRouterParameters({
@@ -65,6 +93,7 @@ export const Long: Story = {
     ],
     args: {
         data: data.jobs[1],
+        applied: false
     },
     parameters: {
         reactRouter: reactRouterParameters({

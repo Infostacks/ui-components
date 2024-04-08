@@ -6,10 +6,11 @@ import { useMediaQuery } from "@mui/material";
 import JobOptions from "../Options";
 
 export interface JobTitleProps {
-    data: any
+    data: any;
+    applied: boolean;
 }
 
-export default function JobTitle({ data }) {
+export default function JobTitle({ data, applied }) {
     const isXS = useMediaQuery((theme: any) => theme.breakpoints.down('sm'))
 
     return (
@@ -21,40 +22,48 @@ export default function JobTitle({ data }) {
                     <Typography className="jobRow-jobTitle">{data.jobDetails.title}</Typography>
                     <Typography sx={style.textJobLocation}>{data.jobDetails.location}</Typography>
 
-                    <Box sx={style.orgActivitySmall}><Button sx={style.searchBtn}>
-                        Follow
-                    </Button>
-                        <Button sx={style.searchBtn}
-                            onClick={() => {
-                                // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/jobs/apply/${data.jobDetails._id}`)
-                                window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
-                            }
-                            }
-                        >
-                            Apply
-                        </Button></Box>
+                    {
+                        !applied &&
+                        <Box sx={style.orgActivitySmall}>
+                            <Button sx={style.searchBtn}>
+                                Follow
+                            </Button>
+                            <Button sx={style.searchBtn}
+                                onClick={() => {
+                                    // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/jobs/apply/${data.jobDetails._id}`)
+                                    window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
+                                }
+                                }
+                            >
+                                Apply
+                            </Button>
+                        </Box>
+                    }
                 </Box>
             </Box>
             <Box sx={style.orgActivityContainer}>
-                <Box sx={style.activityBox}>
-                    {
-                        !isXS && <>
-                            <JobOptions />
-                        </>
-                    }
-                    <Box sx={style.orgActivityLarge}><Button sx={style.searchBtn}>
-                        Follow
-                    </Button>
-                        <Button sx={style.searchBtn}
-                            onClick={() => {
-                                // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/jobs/apply/${data.jobDetails._id}`)
-                                window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/profile`)
-                            }
-                            }
-                        >
-                            Apply
-                        </Button></Box>
-                </Box>
+                {
+                    !applied &&
+                    <Box sx={style.activityBox}>
+                        {
+                            !isXS && <>
+                                <JobOptions />
+                            </>
+                        }
+                        <Box sx={style.orgActivityLarge}><Button sx={style.searchBtn}>
+                            Follow
+                        </Button>
+                            <Button sx={style.searchBtn}
+                                onClick={() => {
+                                    // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/jobs/apply/${data.jobDetails._id}`)
+                                    window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/profile`)
+                                }
+                                }
+                            >
+                                Apply
+                            </Button></Box>
+                    </Box>
+                }
                 <Box sx={style.ai_recommend}>
                     {data.jobDetails.is_recommended_by_ai ? <Typography className="recommended"> {figmaIcons.AI()} Recommended for you by AI</Typography> : <Typography></Typography>}
                 </Box>

@@ -30,7 +30,7 @@ export default function JobsSearchLayout({ data, handlePageChange, total }: Jobs
                         />
                         {
                             !isSmall && data.length > current &&
-                            <JobDetail data={data[current]} />
+                            <JobDetail data={data[current]} applied={false}/>
                         }
                     </>
                 }
