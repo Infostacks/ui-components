@@ -14,7 +14,7 @@ const style = {
             // overflow: 'auto',
             flex: 2,
             alignSelf: 'stretch',
-            maxWidth: '925px',
+            // maxWidth: '925px',
         };
     }
 }

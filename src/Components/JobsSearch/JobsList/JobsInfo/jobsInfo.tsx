@@ -45,8 +45,8 @@ export default function JobsInfo({ data, setCurrent, index, isSmallDev }) {
             </Box>
 
             <Box sx={style.jobStats}>
-                <Typography>{figmaIcons.eye} {data.jobDetails.views?.length} Viewed  </Typography>
-                <Typography>{figmaIcons.applied} {data.jobDetails.applicants?.length} Applied</Typography>
+                <Typography>{figmaIcons.eye()} {data.jobDetails.views} Viewed  </Typography>
+                <Typography>{figmaIcons.applied()} {data.jobDetails.applicants} Applied</Typography>
             </Box>
 
             <Box sx={style.ai_recommend}>
