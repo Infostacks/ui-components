@@ -21,16 +21,19 @@ export default function JobsSearchLayout({ data, handlePageChange, total }: Jobs
                 {
                     data &&
                     <>
-                        <JobsList
-                            data={data}
-                            setCurrent={setCurrent}
-                            isSmallDev={isSmall}
-                            handlePageChange={handlePageChange}
-                            total={total}
-                        />
+                        <Box sx={{ width: !isSmall && data.length > current ? '30%' : '100%' }}>
+
+                            <JobsList
+                                data={data}
+                                setCurrent={setCurrent}
+                                isSmallDev={isSmall}
+                                handlePageChange={handlePageChange}
+                                total={total}
+                            />
+                        </Box>
                         {
                             !isSmall && data.length > current &&
-                            <JobDetail data={data[current]} applied={false}/>
+                            <JobDetail data={data[current]} applied={false} />
                         }
                     </>
                 }

@@ -366,6 +366,55 @@ let figmaIcons: figmaIconsProps = {
       />
     </svg>
   ),
+  eye: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="21"
+      viewBox="0 0 20 21"
+      fill="none"
+    >
+      <path
+        d="M12.9833 10.4999C12.9833 12.1499 11.6499 13.4833 9.99993 13.4833C8.34993 13.4833 7.0166 12.1499 7.0166 10.4999C7.0166 8.84993 8.34993 7.5166 9.99993 7.5166C11.6499 7.5166 12.9833 8.84993 12.9833 10.4999Z"
+        stroke="black"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.99987 17.3918C12.9415 17.3918 15.6832 15.6584 17.5915 12.6584C18.3415 11.4834 18.3415 9.50843 17.5915 8.33343C15.6832 5.33343 12.9415 3.6001 9.99987 3.6001C7.0582 3.6001 4.31654 5.33343 2.4082 8.33343C1.6582 9.50843 1.6582 11.4834 2.4082 12.6584C4.31654 15.6584 7.0582 17.3918 9.99987 17.3918Z"
+        stroke="black"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+
+  applied: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="21"
+      viewBox="0 0 20 21"
+      fill="none"
+    >
+      <path
+        d="M7.49984 18.8334H12.4998C16.6665 18.8334 18.3332 17.1667 18.3332 13.0001V8.00008C18.3332 3.83341 16.6665 2.16675 12.4998 2.16675H7.49984C3.33317 2.16675 1.6665 3.83341 1.6665 8.00008V13.0001C1.6665 17.1667 3.33317 18.8334 7.49984 18.8334Z"
+        stroke="black"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M6.4585 10.4999L8.81683 12.8583L13.5418 8.1416"
+        stroke="black"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
 };
 
 export default figmaIcons;
