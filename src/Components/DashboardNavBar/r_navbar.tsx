@@ -54,8 +54,8 @@ export default function DashboardNavBar() {
           <MenuItem onClick={handleClose}>My account</MenuItem>
           <MenuItem onClick={handleLogout}>Logout</MenuItem>
         </Menu>
-        {/* <Avatar src={image} /> */}
       </Box>
+        {/* <Avatar src={image} /> */}
     </Box>
   );
 }
