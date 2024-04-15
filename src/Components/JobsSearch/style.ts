@@ -1,6 +1,6 @@
 const style = {
     jobsContainer: {
-        border: '1px solid black'
+        // border: '1px solid black'
     },
     layout: {
         display: 'flex',
