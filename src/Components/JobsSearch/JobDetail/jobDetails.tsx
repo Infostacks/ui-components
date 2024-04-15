@@ -7,10 +7,11 @@ import { useLocation } from 'react-router-dom'
 
 export interface JobDetailProps {
     data: any;
-    applied: boolean
+    applied: boolean;
+    applyUrl: string;
 }
 
-export default function JobDetail({ data, applied }: any) {
+export default function JobDetail({ data, applied, applyUrl }: any) {
     const location = useLocation();
 
     const handleScroll = () => {
@@ -33,7 +34,7 @@ export default function JobDetail({ data, applied }: any) {
     }, [])
     return (
         <Box sx={{ ...style.container(location.pathname.split('/')[1] !== 'viewjob') }} id='job-detail-container'>
-            <JobTitle data={data} applied={applied} />
+            <JobTitle data={data} applied={applied} applyUrl={applyUrl}/>
 
             <Divider sx={{ borderColor: 'black' }} />
 

@@ -18,7 +18,8 @@ const meta: Meta = {
     argTypes: {
         data: { control: 'object' },
         handlePageChange: {},
-        total: {control: 'number'}
+        total: {control: 'number'},
+        applyUrl: {control: 'string'},
     }
 }
 
@@ -41,6 +42,7 @@ export const primary: Story = {
     args: {
         data: data.jobs,
         total: data.total,
+        applyUrl: '/apply/'
     },
     parameters: {
         reactRouter: reactRouterParameters({

@@ -17,7 +17,8 @@ const meta: Meta = {
     tags: ['autodocs'],
     argTypes: {
         data: { control: 'object' },
-        applied: { control: 'boolean' }
+        applied: { control: 'boolean' },
+        applyUrl: { control: 'string' }
         // total: { control: 'number' },
         // isSmallDev: {control: 'boolean'}
     }
@@ -41,7 +42,8 @@ export const Short: Story = {
     ],
     args: {
         data: data.jobs[0],
-        applied: false
+        applied: false,
+        applyUrl: "/apply/"
     },
     parameters: {
         reactRouter: reactRouterParameters({
@@ -93,7 +95,8 @@ export const Long: Story = {
     ],
     args: {
         data: data.jobs[1],
-        applied: false
+        applied: false,
+        applyUrl: "/apply/"
     },
     parameters: {
         reactRouter: reactRouterParameters({

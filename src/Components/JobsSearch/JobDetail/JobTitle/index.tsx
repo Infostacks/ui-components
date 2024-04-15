@@ -4,14 +4,17 @@ import style from "./style";
 import figmaIcons from "../../../../Utils/Icons/figma";
 import { useMediaQuery } from "@mui/material";
 import JobOptions from "../Options";
+import { useNavigate } from "react-router-dom";
 
 export interface JobTitleProps {
     data: any;
     applied: boolean;
+    applyUrl: string;
 }
 
-export default function JobTitle({ data, applied }) {
+export default function JobTitle({ data, applyUrl, applied }) {
     const isXS = useMediaQuery((theme: any) => theme.breakpoints.down('sm'))
+    const navigate = useNavigate();
 
     return (
         <Box sx={style.row}>
@@ -30,10 +33,9 @@ export default function JobTitle({ data, applied }) {
                             </Button>
                             <Button sx={style.searchBtn}
                                 onClick={() => {
-                                    // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/jobs/apply/${data.jobDetails._id}`)
-                                    window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
-                                }
-                                }
+                                    // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
+                                    navigate(`${applyUrl}${data.jobDetails._id}`)
+                                }}
                             >
                                 Apply
                             </Button>
@@ -53,12 +55,11 @@ export default function JobTitle({ data, applied }) {
                         <Box sx={style.orgActivityLarge}><Button sx={style.searchBtn}>
                             Follow
                         </Button>
-                            <Button sx={style.searchBtn}
+                        <Button sx={style.searchBtn}
                                 onClick={() => {
-                                    // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/jobs/apply/${data.jobDetails._id}`)
-                                    window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/dashboard/profile`)
-                                }
-                                }
+                                    // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
+                                    navigate(`${applyUrl}${data.jobDetails._id}`)
+                                }}
                             >
                                 Apply
                             </Button></Box>
