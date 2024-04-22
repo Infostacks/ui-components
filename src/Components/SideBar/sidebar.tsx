@@ -38,11 +38,10 @@ const SideBar = ({
 
   return (
     <Box sx={style.containerBoxSideBar(collapsed)}>
-      <Box sx={style.containerBoxSideBarTop}
-        onClick={()=>{navigate('/dashboard');}}
-      >
+      <Box sx={style.containerBoxSideBarTop}>
         <Box
           sx={style.childTransition(collapsed)}
+          onClick={()=>{navigate('/dashboard');}}
         >
           {figmaIcons.dashBoardIcons()}
           <Typography sx={style.logoTypo(collapsed)}>
