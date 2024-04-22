@@ -16,7 +16,6 @@ const style = {
     display: "flex",
     flexDirection: "column",
     gap: "20px",
-    cursor:'pointer',
   },
   childTransition: (isCollapsed:boolean) => ({
     display: "flex",
@@ -26,7 +25,8 @@ const style = {
     pl: 'clamp(4px, 2vw, 16px)',
     pr: isCollapsed ? '0px' : 'clamp(4px, 2vw, 16px)',
     transition: `all ${TRANSITION_TIME} ease`,
-    height: '30px'
+    height: '30px',
+    cursor:'pointer',
   }),
   logoTypo: (isCollapsed:boolean) => ({
     fontSize: '24px',
