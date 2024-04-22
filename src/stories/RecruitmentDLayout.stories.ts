@@ -12,6 +12,9 @@ const meta = {
   component: R_DashboardLayout,
 
   decorators: [StorybookDecor, withRouter],
+  argTypes: {
+    title: {control: "text"}
+  }
 };
 
 export default meta;
@@ -19,6 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const HomePage: Story = {
   args: {
+    title: 'Candidate',
     dashboardItemList: dashboardItemList,
     activeSection: "dashboard",
     handleSectionClick: (section: string) => {
@@ -51,6 +55,7 @@ export const HomePage: Story = {
 
 export const ProfilePage: Story = {
     args: {
+      title: 'Candidate',
       dashboardItemList: dashboardItemList,
       activeSection: "profile",
       handleSectionClick: (section: string) => {

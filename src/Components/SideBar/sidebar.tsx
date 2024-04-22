@@ -5,6 +5,7 @@ import style from "./style";
 import ListItem from "./listItem";
 import { Typography } from "@mui/material";
 import { DashboardItem } from '../../Utils/Constants/dashboardItemList';
+import { useNavigate } from "react-router-dom";
 export interface SideBarProps {
   title: string;
   onClick?: Function;
@@ -23,6 +24,7 @@ const SideBar = ({
   isSmallScreen=false,
 }: SideBarProps) => {
   const [collapsed, setCollapsed] = React.useState(isSmallScreen);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     setCollapsed(isSmallScreen);
@@ -36,7 +38,9 @@ const SideBar = ({
 
   return (
     <Box sx={style.containerBoxSideBar(collapsed)}>
-      <Box sx={style.containerBoxSideBarTop}>
+      <Box sx={style.containerBoxSideBarTop}
+        onClick={()=>{navigate('/dashboard');}}
+      >
         <Box
           sx={style.childTransition(collapsed)}
         >

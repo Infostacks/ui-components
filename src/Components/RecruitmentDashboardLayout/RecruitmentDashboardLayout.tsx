@@ -7,6 +7,7 @@ import { RSidebar } from "..";
 import { DashboardItem } from "../../Utils/Constants/dashboardItemList";
 
 export interface DashboardLayoutProps {
+  title: string;
   dashboardItemList: DashboardItem[];
   activeSection: string;
   handleSectionClick: (section: string) => void;
@@ -15,6 +16,7 @@ export interface DashboardLayoutProps {
 
 const R_DashboardLayout = (
   {
+    title,
     dashboardItemList, 
     activeSection, 
     handleSectionClick, 
@@ -27,7 +29,7 @@ const R_DashboardLayout = (
       <RSidebar 
         activeSection={activeSection}
         handleSectionClick={handleSectionClick}
-        title="Candidate"
+        title={title}
         isSmallScreen={isSmallScreen}
         listItems={dashboardItemList}
       />

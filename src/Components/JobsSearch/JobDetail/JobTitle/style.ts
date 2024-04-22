@@ -58,6 +58,7 @@ const style = {
         display: 'flex', 
         gap: '20px',
         alignItems: 'center',
+        flexWrap: 'wrap',
         justifyContent: 'flex-end',
         "& .MuiButton-root": {
             padding: 0,
