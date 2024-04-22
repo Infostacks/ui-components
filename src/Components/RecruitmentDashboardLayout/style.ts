@@ -16,7 +16,7 @@ const style = {
     width: "100%",
     display: "flex",
     // justifyContent:"center",
-    padding: "12px 0px 0px 0px",
+    // padding: "12px 0px 0px 0px",
     alignItems: "center",
     flexShrink: 0,
     // paddingX: "16px",

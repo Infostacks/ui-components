@@ -52,17 +52,19 @@ export default function JobTitle({ data, applyUrl, applied }) {
                                 <JobOptions />
                             </>
                         }
-                        <Box sx={style.orgActivityLarge}><Button sx={style.searchBtn}>
-                            Follow
-                        </Button>
-                        <Button sx={style.searchBtn}
+                        <Box sx={style.orgActivityLarge}>
+                            <Button sx={style.searchBtn}>
+                                Follow
+                            </Button>
+                            <Button sx={style.searchBtn}
                                 onClick={() => {
                                     // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
                                     navigate(`${applyUrl}${data.jobDetails._id}`)
                                 }}
                             >
                                 Apply
-                            </Button></Box>
+                            </Button>
+                        </Box>
                     </Box>
                 }
                 <Box sx={style.ai_recommend}>

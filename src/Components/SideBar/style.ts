@@ -16,6 +16,7 @@ const style = {
     display: "flex",
     flexDirection: "column",
     gap: "20px",
+    cursor:'pointer',
   },
   childTransition: (isCollapsed:boolean) => ({
     display: "flex",
