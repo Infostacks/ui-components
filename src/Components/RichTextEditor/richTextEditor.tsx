@@ -50,6 +50,7 @@ import {
     RichTextEditor,
     TableBubbleMenu,
     TableImproved,
+    MenuButtonImageUpload
     // type RichTextEditorRef,
 } from "mui-tiptap";
 
@@ -137,13 +138,15 @@ const extensions = [
 export interface RichTextEditorTipTapProps {
     editable: boolean
     value: String;
-    setValue: Function
+    setValue: Function;
+    handleFiles: Function | null;
 }
 
 export default function RichTextEditorTipTap({
-    editable=true,
+    editable = true,
     value,
-    setValue
+    setValue,
+    handleFiles,
 }: RichTextEditorTipTapProps) {
     const rteRef = React.useRef(null);
 
@@ -193,6 +196,30 @@ export default function RichTextEditorTipTap({
                         <MenuDivider />
 
                         <MenuButtonAddTable />
+
+
+                        {
+                            handleFiles !== null &&
+                            <MenuButtonImageUpload
+                                onUploadFiles={(files) =>
+                                    // For the sake of a demo, we don't have a server to upload the files
+                                    // to, so we'll instead convert each one to a local "temporary" object
+                                    // URL. This will not persist properly in a production setting. You
+                                    // should instead upload the image files to your server, or perhaps
+                                    // convert the images to bas64 if you would like to encode the image
+                                    // data directly into the editor content, though that can make the
+                                    // editor content very large.
+                                    {
+                                        const covFiles = files.map((file) => ({
+                                            src: URL.createObjectURL(file),
+                                            alt: file.name,
+                                        }));
+                                        handleFiles(covFiles);
+                                        return covFiles;
+                                    }
+                                }
+                            />
+                        }
 
                         <MenuDivider />
 
