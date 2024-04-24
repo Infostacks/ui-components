@@ -10,7 +10,8 @@ const meta: Meta = {
     argTypes: {
         editable: { control: 'boolean' },
         value: { control: 'text' },
-        setValue: { control: 'function' }
+        setValue: { control: 'function' },
+        handleFiles: {control: 'function'}
     }
 }
 
@@ -20,5 +21,9 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
     args: {
+        editable: true,
+        value: 'Hello world',
+        setValue: (value: any) => console.log(value),
+        handleFiles: (files: any) => console.log(files)
     }
 };
