@@ -25,7 +25,7 @@ const Loader = ({
         value={value}
         variant={variant}
         size={size}
-        sx={{ color: "green", ...sx }}
+        sx={{ ...sx }}
     />
 );
 

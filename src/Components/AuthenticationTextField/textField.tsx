@@ -37,7 +37,7 @@ const AuthenticationTextField = ({
         sx={{
             "& .MuiOutlinedInput-root": {
                 borderRadius: "25px",
-                backgroundColor: `${containError ? '#FFD2D2' : "#D2DBFF"}`,
+                backgroundColor: containError ? 'error.extraLight' : "secondary.extraDark",
                 padding: "5px 15px",
                 "&:hover fieldset": {
                     borderColor: "transparent", // Remove outline when not focused

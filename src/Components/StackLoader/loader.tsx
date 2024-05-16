@@ -47,7 +47,19 @@ export default function Loader() {
             margin: '0'
         }}>
 
-            <Box className="loader">
+            <Box className="loader" 
+                sx={{
+                    ".side-top": {
+                        backgroundColor: 'primary.main'
+                    },
+                    ".side-left": {
+                        backgroundColor: 'primary.dark'
+                    },
+                    ".side-right": {
+                        backgroundColor: 'primary.extraDark'
+                    }
+                }}
+            >
                 <Box className="box box-1">
                     <Box className="side-left"></Box>
                     <Box className="side-right"></Box>

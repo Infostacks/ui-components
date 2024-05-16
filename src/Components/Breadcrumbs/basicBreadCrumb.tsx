@@ -37,8 +37,8 @@ export default function NavbarBreadcrumbs({ breadClick, crumbClick, sx, separato
                 separator={separator}
                 aria-label="breadcrumb"
                 maxItems={3}
-                itemsAfterCollapse={0}
-                itemsBeforeCollapse={2}
+                itemsAfterCollapse={1}
+                // itemsBeforeCollapse={2}
             >
                 {
                     crumbs.map((item, index) => {

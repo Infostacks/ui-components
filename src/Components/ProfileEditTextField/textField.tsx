@@ -1,4 +1,4 @@
-import { InputAdornment, TextField } from "@mui/material";
+import { InputAdornment, TextField, useTheme } from "@mui/material";
 import React from "react";
 
 export interface TextFieldInterface {
@@ -42,63 +42,64 @@ const ProfileEditTextField = ({
     rows,
     onClick,
     onChange,
-}: TextFieldInterface) =>
-(
-    <TextField
-        sx={{
-            my: 1,
-            width: "99%",
-            "& .MuiOutlinedInput-root": {
-                borderRadius: "8px",
-                border: "1px solid #788BFF",
-                padding: "4px 4px",
-                "fieldset": {
-                    border: "none"
+}: TextFieldInterface) => {
+    const theme = useTheme();
+    return (
+        <TextField
+            sx={{
+                my: 1,
+                width: "99%",
+                "& .MuiOutlinedInput-root": {
+                    borderRadius: "8px",
+                    border: `1px solid ${theme.palette.primary.dark}`,
+                    padding: "4px 4px",
+                    "fieldset": {
+                        border: "none"
+                    },
+                    "&.Mui-focused fieldset": {
+                        borderColor: "transparent",
+                    },
+                    "& fieldset": {
+                        borderColor: "transparent",
+                        height: '40px',
+                    },
                 },
-                "&.Mui-focused fieldset": {
-                    borderColor: "transparent",
+                "& .MuiOutlinedInput-input": {
+                    padding: '4px'
                 },
-                "& fieldset": {
-                    borderColor: "transparent",
-                    height: '40px',
+                "& .Mui-focused": {
+                    backgroundColor: "white",
+                    padding: '3px',
+                    border: `2px solid ${theme.palette.primary.dark}`,
                 },
-            },
-            "& .MuiOutlinedInput-input": {
-                padding: '4px'
-            },
-            "& .Mui-focused": {
-                backgroundColor: "white",
-                padding: '3px',
-                border: "2px solid #788BFF",
-            },
-            ...sx,
-        }}
-        InputProps={{
-            startAdornment: (
-                <InputAdornment position="start">{startingicon}</InputAdornment>
-            ),
-            endAdornment: (
-                <InputAdornment position="end">{endingicon}</InputAdornment>
-            ),
-        }}
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        onChange={onChange}
-        onClick={onClick}
-        required={required}
-        error={containError}
-        helperText={helperText}
-        autoComplete={autoComplete}
-        {...register}
-        disabled={disable}
-        select={select}
-        multiline={multiline}
-        rows={rows}
-    >
-        {children}
-    </TextField>
-)
-    ;
+                ...sx,
+            }}
+            InputProps={{
+                startAdornment: (
+                    <InputAdornment position="start">{startingicon}</InputAdornment>
+                ),
+                endAdornment: (
+                    <InputAdornment position="end">{endingicon}</InputAdornment>
+                ),
+            }}
+            type={type}
+            value={value}
+            placeholder={placeholder}
+            onChange={onChange}
+            onClick={onClick}
+            required={required}
+            error={containError}
+            helperText={helperText}
+            autoComplete={autoComplete}
+            {...register}
+            disabled={disable}
+            select={select}
+            multiline={multiline}
+            rows={rows}
+        >
+            {children}
+        </TextField>
+    )
+};
 
 export default ProfileEditTextField;

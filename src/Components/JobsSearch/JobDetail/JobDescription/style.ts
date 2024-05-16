@@ -7,7 +7,7 @@ const style = {
         },
         "::-webkit-scrollbar-thumb": {
             borderRadius: '8px',
-            background: '#D2DBFF',
+            backgroundColor: 'secondary.extraDark',
             height: '278px',
         },
     },
@@ -18,7 +18,7 @@ const style = {
         width: '100%',
         mb: '16px',
         "button": {
-            background: "#D2DBFF",
+            backgroundColor: "secondary.extraDark",
             margin: '0px 10px',
             padding: '0px',
             minWidth: 'auto'
@@ -50,7 +50,7 @@ const style = {
         display: 'flex',
         gap: '8px',
         "& .MuiTypography-root": {
-            background: "#D2DBFF",
+            backgroundColor: "secondary.extraDark",
             padding: '4px 8px',
         }
     },

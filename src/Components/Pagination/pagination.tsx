@@ -14,30 +14,26 @@ export default function PaginationRounded({ count, handleChange, style }: Pagina
             <Pagination
                 count={count}
                 onChange={handleChange}
+                color={'primary'}
                 variant="outlined"
                 shape="rounded"
                 sx={{
                     ...{
                         "button": {
                             fontWeight: 'bold',
-                            border: "1px solid #F1F1F1",
-                            background: "#FFF",
                             width: '32px',
                             height: '32px',
                             borderRadius: '8px',
-                            fontFamily: 'DM Sans',
                             ":hover": {
-                                background: "#5960ffab",
-                                color: 'whitesmoke'
+                                backgroundColor: 'primary.main',
+                                color: 'primary.contrastText'
                             }
                         },
                         ".Mui-selected": {
-                            backgroundColor: "#4950FF !important",
-                            color: "white",
-                            border: "none",
+                            backgroundColor: 'primary.main',
+                            color: 'primary.contrastText',
                             ":hover": {
-                                backgroundColor: "#4950FF",
-                                color: 'whitesmoke'
+                                backgroundColor: 'primary.main',
                             }
                         }
                     },

@@ -1,6 +1,6 @@
 const style = {
     container: {
-        background: '#F4F6FF',
+        backgroundColor: 'secondary.extraLight',
         borderRadius: '16px',
         padding: {xs: '6px', md: '16px'},
         display: 'flex',

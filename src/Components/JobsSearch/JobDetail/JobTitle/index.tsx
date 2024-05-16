@@ -56,7 +56,8 @@ export default function JobTitle({ data, applyUrl, applied }) {
                             <Button sx={style.searchBtn}>
                                 Follow
                             </Button>
-                            <Button sx={style.searchBtn}
+                            <Button 
+                                sx={style.searchBtn}
                                 onClick={() => {
                                     // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
                                     navigate(`${applyUrl}${data.jobDetails._id}`)

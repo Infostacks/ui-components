@@ -31,15 +31,6 @@ const theme = createTheme({});
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Short: Story = {
-    decorators: [
-        (Story) => (
-            <ThemeProvider theme={theme}>
-                <MUIThemeProvider theme={theme}>
-                    <Story />
-                </MUIThemeProvider>
-            </ThemeProvider>
-        )
-    ],
     args: {
         data: data.jobs[0],
         applied: false,
@@ -58,15 +49,6 @@ export const Short: Story = {
 };
 
 export const View: Story = {
-    decorators: [
-        (Story) => (
-            <ThemeProvider theme={theme}>
-                <MUIThemeProvider theme={theme}>
-                    <Story />
-                </MUIThemeProvider>
-            </ThemeProvider>
-        )
-    ],
     args: {
         data: data.jobs[0],
         applied: true
@@ -84,15 +66,6 @@ export const View: Story = {
 };
 
 export const Long: Story = {
-    decorators: [
-        (Story) => (
-            <ThemeProvider theme={theme}>
-                <MUIThemeProvider theme={theme}>
-                    <Story />
-                </MUIThemeProvider>
-            </ThemeProvider>
-        )
-    ],
     args: {
         data: data.jobs[1],
         applied: false,
