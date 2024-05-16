@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import React from 'react'
 import style from './style';
 import { useNavigate } from 'react-router-dom';
@@ -13,6 +13,7 @@ interface ListItemProps {
 
 const ListItem = ({ isCollapsed, activeSection, handleSectionClick, listItems }: ListItemProps) => {
   const navigate = useNavigate();
+  const theme = useTheme();
   return (
     <Box sx={{ padding: "7px" }}>
       {
@@ -27,16 +28,17 @@ const ListItem = ({ isCollapsed, activeSection, handleSectionClick, listItems }:
               navigate(menuItem.path);
             }}
             key={menuItem.label}
-            >
+          >
             {menuItem.icon(
-              activeSection === menuItem.section ? "#4950FF" : "#292D32"
+              // activeSection === menuItem.section ? "#4950FF" : "#292D32"
+              activeSection === menuItem.section ? theme.palette.primary.extraDark ?? "black" : "#292D32"
             )}
             <Typography
               key={menuItem.path}
               sx={{
                 ...style.collapseTypo(isCollapsed),
                 ...{
-                  color: activeSection === menuItem.section ? "#4950FF" : "",
+                  color: activeSection === menuItem.section ? "primary.extraDark" : "",
                   fontWeight: activeSection === menuItem.section ? 600 : 500,
                   lineHeight: "24px",
                 }

@@ -72,11 +72,15 @@ const style = {
         borderRadius: '72px',
         px: '24px !important',
         py: '0px !important',
-        background: `linear-gradient(180deg, #5A50D3 0%, #3326C9 100%)`,
-        color: 'white',
+        // background: `linear-gradient(180deg, #5A50D3 0%, #3326C9 100%)`,
+        backgroundColor: 'primary.main',
+        color: 'primary.contrastText',
         // textTransform: 'none',
         height: '40px',
         mx: '2px !important',
+        ":hover": {
+            backgroundColor: 'primary.dark',
+        }
     },
     ai_recommend: {
         display: 'flex',

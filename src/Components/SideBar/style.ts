@@ -67,7 +67,7 @@ const style = {
     py: '12px',
     pl: 'clamp(4px, 2vw, 16px)',
     pr: isCollapsed ? '0px' : 'clamp(4px, 2vw, 16px)',
-    background: isActive ? "#E6ECFF" : "",
+    backgroundColor: isActive ? "primary.extraLight" : "",
     borderRadius: "12px",
     transition: `all ${TRANSITION_TIME} linear`,
   }),
