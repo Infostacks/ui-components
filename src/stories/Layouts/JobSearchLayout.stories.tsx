@@ -1,11 +1,14 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import data from '../Components/Layouts/JobsSearch/const';
+import data from '../../Components/Layouts/JobsSearch/const';
 import { reactRouterParameters, withRouter } from 'storybook-addon-react-router-v6';
-import { JobsList } from '../Components';
+import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@emotion/react';
+import { JobsSearchLayout } from '../../Components';
 
 const meta: Meta = {
-    title: 'List/JobsList',
-    component: JobsList,
+    title: 'Layout/JobsSearch',
+    component: JobsSearchLayout,
     decorators: [
         withRouter
     ],
@@ -14,20 +17,32 @@ const meta: Meta = {
     tags: ['autodocs'],
     argTypes: {
         data: { control: 'object' },
-        total: { control: 'number' },
-        isSmallDev: { control: 'boolean' }
+        handlePageChange: {},
+        total: {control: 'number'},
+        applyUrl: {control: 'string'},
     }
 }
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const theme = createTheme({});
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const primary: Story = {
+    // decorators: [
+    //     (Story) => (
+    //         <ThemeProvider theme={theme}>
+    //             <MUIThemeProvider theme={theme}>
+    //                 <Story />
+    //             </MUIThemeProvider>
+    //         </ThemeProvider>
+    //     )
+    // ],
     args: {
         data: data.jobs,
         total: data.total,
-        isSmallDev: true
+        applyUrl: '/apply/'
     },
     parameters: {
         reactRouter: reactRouterParameters({

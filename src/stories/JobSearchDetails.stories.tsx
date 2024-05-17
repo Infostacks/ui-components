@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import JobDetail from '../Components/JobsSearch/JobDetail';
-import data from '../Components/JobsSearch/const';
+import JobDetail from '../Components/Layouts/JobsSearch/JobDetail';
+import data from '../Components/Layouts/JobsSearch/const';
 import { reactRouterParameters, withRouter } from 'storybook-addon-react-router-v6';
 import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@emotion/react';
