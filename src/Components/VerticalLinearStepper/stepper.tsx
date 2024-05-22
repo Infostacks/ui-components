@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Stepper from '@mui/material/Stepper';
+import { useTheme } from '@mui/material';
 
 export interface MyVerticalLinearStepperProps {
     isActive: number;
@@ -9,6 +10,7 @@ export interface MyVerticalLinearStepperProps {
 // TODO: change the completed step algo...
 // will consider completed if data exist...
 export default function MyVerticalLinearStepper({ isActive, children }: MyVerticalLinearStepperProps) {
+    const theme=useTheme()
     return (
         <Stepper activeStep={isActive} orientation="vertical"
             sx={{
@@ -34,7 +36,7 @@ export default function MyVerticalLinearStepper({ isActive, children }: MyVertic
                     my: '-10px'
                 },
                 "& .MuiStepConnector-line": {
-                    borderRight: '2px solid #3326C9',
+                    borderRight: `2px solid  ${theme.palette.accent.main}`,
                     width: '82%',
                     borderLeft: 'none',
                     height: '72px',
