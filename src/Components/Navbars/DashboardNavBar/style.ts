@@ -60,7 +60,7 @@ const style = {
     },
   },
   colorBox: {
-    background: '#4950FF',
+    backgroundColor: 'accent.main',
     width: '100%',
     height: 10
   },

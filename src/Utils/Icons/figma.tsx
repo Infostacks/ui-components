@@ -4,7 +4,7 @@ interface figmaIconsProps {
   [key: string]: ((stroke?: string) => React.JSX.Element);
 }
 let figmaIcons: figmaIconsProps = {
-  dashBoardIcons: () => (
+  dashBoardIcons: (theme) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="30"
@@ -13,7 +13,7 @@ let figmaIcons: figmaIconsProps = {
       fill="none"
     >
       <g clipPath="url(#clip0_3713_2827)">
-        <circle cx="14.7724" cy="15.0004" r="15.2275" fill="#2E90FA" />
+        <circle cx="14.7724" cy="15.0004" r="15.2275" fill={theme.palette.accent.main} />
         <path
           fillRule="evenodd"
           clipRule="evenodd"

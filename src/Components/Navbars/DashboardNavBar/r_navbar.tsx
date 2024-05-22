@@ -62,7 +62,7 @@ export default function DashboardNavBar() {
           >
             <Box sx={style.colorBox} />
             <Box sx={{
-              background: '#4950FF',
+              backgroundColor: 'accent.main',
               height: '55px',
               display: 'flex',
               justifyContent: 'center'

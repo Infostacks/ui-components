@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import figmaIcons from "../../../Utils/Icons/figma";
 import style from "./style";
 import ListItem from "./listItem";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { DashboardItem } from '../../../Utils/Constants/dashboardItemList';
 import { useNavigate } from "react-router-dom";
 export interface SideBarProps {
@@ -25,6 +25,7 @@ const SideBar = ({
 }: SideBarProps) => {
   const [collapsed, setCollapsed] = React.useState(isSmallScreen);
   const navigate = useNavigate();
+const theme=useTheme()
 
   React.useEffect(() => {
     setCollapsed(isSmallScreen);
@@ -43,7 +44,7 @@ const SideBar = ({
           sx={style.childTransition(collapsed)}
           onClick={()=>{navigate('/dashboard');}}
         >
-          {figmaIcons.dashBoardIcons()}
+          {figmaIcons.dashBoardIcons(theme)}
           <Typography sx={style.logoTypo(collapsed)}>
             {!collapsed &&
               title
