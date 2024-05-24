@@ -21,6 +21,12 @@ const dashboardItemList:DashboardItem[]=[
         icon: figmaIcons.dashBoardProfileIcons,
         section: "profile",
         path: "/dashboard/profile",
+      },
+      {
+        label: "Members",
+        icon: figmaIcons.membersIcons,
+        section: "members",
+        path: "/dashboard/members",
       }
 ]
 
