@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Menu, MenuItem, Typography, } from "@mui/material";
+import { Badge, Box, Menu, MenuItem, Typography, } from "@mui/material";
 import style from './style';
 import { Link } from "react-router-dom";
 import figmaIcons from "../../../Utils/Icons/figma";
@@ -30,12 +30,26 @@ const NavProfileMenu = ({
       slotProps={{
         paper: style.paperProps
       }}
+      keepMounted={true}
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
       <Link to="/dashboard/profile" style={{ textDecoration: 'none', color: 'black' }}>
         <Box sx={style.imageContainer}>
-          <img src={userAuth.photoURL} style={{ width: '46px', height: '46x', borderRadius: '50%' }} alt={userAuth.displayName} />
+          <Badge
+            overlap="circular"
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            color="success"
+            variant="dot"
+            sx={{
+              "& .MuiBadge-dot": {
+                width: '10px !important',
+                height: '10px !important'
+              }
+            }}
+          >
+            <img src={userAuth.photoURL} style={{ width: '46px', height: '46x', borderRadius: '50%' }} alt={userAuth.displayName} />
+          </Badge>
           <Box>
             <Typography fontWeight={500}>{userAuth.displayName}</Typography>
             <Typography color={"#818089"}>{userAuth.email}</Typography>
