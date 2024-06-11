@@ -4,7 +4,7 @@ interface figmaIconsProps {
   [key: string]: ((stroke?: string) => React.JSX.Element);
 }
 let figmaIcons: figmaIconsProps = {
-  dashBoardIcons: (theme) => (
+  dashBoardIcons: (theme: any) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="30"
@@ -413,6 +413,26 @@ let figmaIcons: figmaIconsProps = {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  ),
+  settingsIcon: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+      <path d="M12 15.5C13.6569 15.5 15 14.1569 15 12.5C15 10.8431 13.6569 9.5 12 9.5C10.3431 9.5 9 10.8431 9 12.5C9 14.1569 10.3431 15.5 12 15.5Z" stroke="#33333A" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2 13.3799V11.6199C2 10.5799 2.85 9.71994 3.9 9.71994C5.71 9.71994 6.45 8.43994 5.54 6.86994C5.02 5.96994 5.33 4.79994 6.24 4.27994L7.97 3.28994C8.76 2.81994 9.78 3.09994 10.25 3.88994L10.36 4.07994C11.26 5.64994 12.74 5.64994 13.65 4.07994L13.76 3.88994C14.23 3.09994 15.25 2.81994 16.04 3.28994L17.77 4.27994C18.68 4.79994 18.99 5.96994 18.47 6.86994C17.56 8.43994 18.3 9.71994 20.11 9.71994C21.15 9.71994 22.01 10.5699 22.01 11.6199V13.3799C22.01 14.4199 21.16 15.2799 20.11 15.2799C18.3 15.2799 17.56 16.5599 18.47 18.1299C18.99 19.0399 18.68 20.1999 17.77 20.7199L16.04 21.7099C15.25 22.1799 14.23 21.8999 13.76 21.1099L13.65 20.9199C12.75 19.3499 11.27 19.3499 10.36 20.9199L10.25 21.1099C9.78 21.8999 8.76 22.1799 7.97 21.7099L6.24 20.7199C5.33 20.1999 5.02 19.0299 5.54 18.1299C6.45 16.5599 5.71 15.2799 3.9 15.2799C2.85 15.2799 2 14.4199 2 13.3799Z" stroke="#33333A" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  helpChatIcon: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+      <path d="M17 18.9302H13L8.54999 21.8902C7.88999 22.3302 7 21.8602 7 21.0602V18.9302C4 18.9302 2 16.9302 2 13.9302V7.93018C2 4.93018 4 2.93018 7 2.93018H17C20 2.93018 22 4.93018 22 7.93018V13.9302C22 16.9302 20 18.9302 17 18.9302Z" stroke="#33333A" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M11.9998 11.8599V11.6499C11.9998 10.9699 12.4198 10.6099 12.8398 10.3199C13.2498 10.0399 13.6598 9.6799 13.6598 9.0199C13.6598 8.0999 12.9198 7.35986 11.9998 7.35986C11.0798 7.35986 10.3398 8.0999 10.3398 9.0199" stroke="#33333A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M11.9955 14.25H12.0045" stroke="#33333A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  doorExit: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+      <path d="M8.8999 8.06023C9.2099 4.46023 11.0599 2.99023 15.1099 2.99023H15.2399C19.7099 2.99023 21.4999 4.78023 21.4999 9.25023V15.7702C21.4999 20.2402 19.7099 22.0302 15.2399 22.0302H15.1099C11.0899 22.0302 9.2399 20.5802 8.9099 17.0402" stroke="#33333A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.0001 12.5H3.62012" stroke="#33333A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5.85 9.1499L2.5 12.4999L5.85 15.8499" stroke="#33333A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 };

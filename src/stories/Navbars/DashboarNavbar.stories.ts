@@ -5,6 +5,7 @@ import {
   reactRouterParameters,
   withRouter,
 } from "storybook-addon-react-router-v6";
+import figmaIcons from "../../Utils/Icons/figma";
 
 const meta = {
   title: "Navbar/Dashboard Navbar",
@@ -50,8 +51,16 @@ export const Home: Story = {
         console.log("signout");
       },
       menuListItems: [
-        { text: "Profile", href: "/profile" },
-        { text: "My Account", href: "/account" },
+        {
+          text: "Settings",
+          href: "/settings",
+          icon: figmaIcons.settingsIcon(),
+        },
+        {
+          text: "Help Center",
+          href: "/profile",
+          icon: figmaIcons.helpChatIcon(),
+        },
       ],
     },
     reactRouter: reactRouterParameters({
@@ -79,8 +88,16 @@ export const Profile: Story = {
         console.log("signout");
       },
       menuListItems: [
-        { text: "Profile", href: "/profile" },
-        { text: "My Account", href: "/account" },
+        {
+          text: "Settings",
+          href: "/settings",
+          icon: figmaIcons.settingsIcon(),
+        },
+        {
+          text: "Help Center",
+          href: "/profile",
+          icon: figmaIcons.helpChatIcon(),
+        },
       ],
     },
     reactRouter: reactRouterParameters({

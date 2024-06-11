@@ -1,10 +1,10 @@
-import { Avatar, Box, Menu, MenuItem, Typography, } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import figmaIcons from "../../../Utils/Icons/figma";
 import React from "react";
 import style from "./style";
 import { NavbarBreadcrumbs } from "../../../index";
 import StorybookContext from "../../../Context/sampleContext";
-import { Link } from "react-router-dom";
+import NavProfileMenu from "../../Cards/NavProfileMenu/navProfile";
 
 export default function DashboardNavBar() {
   const { userAuth, signOutContext, menuListItems } = React.useContext(StorybookContext);
@@ -46,78 +46,14 @@ export default function DashboardNavBar() {
           referrerPolicy="no-referrer"
           rel="noreferrer"
         />
-        <Menu
-          id="basic-menu"
+        <NavProfileMenu
+          userAuth={userAuth}
           anchorEl={anchorEl}
           open={open}
-          onClose={handleClose}
-          slotProps={{
-            paper: style.paperProps
-          }}
-          transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-        >
-          <Box
-            sx={style.imageContainer}
-          >
-            <Box sx={style.colorBox} />
-            <Box sx={{
-              backgroundColor: 'accent.main',
-              height: '55px',
-              display: 'flex',
-              justifyContent: 'center'
-            }}>
-              <img
-                alt={userAuth.displayName}
-                src={userAuth?.photoURL}
-
-                onError={({ currentTarget }) => {
-                  currentTarget.onerror = null; // prevents looping
-                  currentTarget.src = "";
-                  currentTarget.style.background = "white"
-                }}
-                style={style.imageStyle} />
-            </Box>
-            <Box sx={style.colorBox} />
-          </Box>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}
-          >
-            <Typography variant="h2" fontWeight={'bolder'} fontSize={'18px'} px={3} textAlign={"center"}>{userAuth?.displayName}</Typography>
-            <Typography textAlign={'center'} variant="caption">{userAuth?.email}</Typography>
-          </Box>
-          <hr />
-          {
-            menuListItems &&
-            menuListItems.map((menuList: any) => (
-              <MenuItem key={menuList.text} onClick={handleClose}
-              >
-                <Link
-                  to={menuList.href}
-                  style={style.textStyle}
-                >
-                  {menuList.text}
-                </Link>
-              </MenuItem>
-            ))
-          }
-          <MenuItem onClick={handleLogout}>
-            <Link
-              to={'#'}
-              role="button"
-              style={style.textStyle}
-            >
-              Logout
-            </Link>
-          </MenuItem>
-
-          {/* <hr /> */}
-
-        </Menu>
+          handleClose={handleClose}
+          menuListItems={menuListItems}
+          handleLogout={handleLogout}
+        />
       </Box>
       {/* <Avatar src={image} /> */}
     </Box>
