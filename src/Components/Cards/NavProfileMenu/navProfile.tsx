@@ -33,7 +33,7 @@ const NavProfileMenu = ({
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
-      <Link to="/prfoile" style={{ textDecoration: 'none', color: 'black' }}>
+      <Link to="/dashboard/profile" style={{ textDecoration: 'none', color: 'black' }}>
         <Box sx={style.imageContainer}>
           <img src={userAuth.photoURL} style={{ width: '46px', height: '46x', borderRadius: '50%' }} alt={userAuth.displayName} />
           <Box>
