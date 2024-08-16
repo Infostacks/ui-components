@@ -10,11 +10,16 @@ export interface JobsSearchLayoutProps {
     handlePageChange: (value: number) => void;
     total: number;
     applyUrl: string;
+    appliedList?: string[]
 }
 
-export default function JobsSearchLayout({ data, handlePageChange, total, applyUrl }: JobsSearchLayoutProps) {
+export default function JobsSearchLayout({ data, handlePageChange, total, applyUrl, appliedList = [] }: JobsSearchLayoutProps) {
     const [current, setCurrent] = React.useState(0);
     const isSmall = useMediaQuery('(max-width: 836px)');
+
+    const list = [
+        '65fc7f59f6c8a424657e06f3'
+    ]
 
     return (
         <Box sx={style.jobsContainer}>
@@ -34,7 +39,7 @@ export default function JobsSearchLayout({ data, handlePageChange, total, applyU
                         </Box>
                         {
                             !isSmall && data.length > current &&
-                            <JobDetail data={data[current]} applied={false} applyUrl={applyUrl}/>
+                            <JobDetail data={data[current]} applied={false} applyUrl={applyUrl} alreadyApplied={appliedList.includes(data[current]._id)} />
                         }
                     </>
                 }
