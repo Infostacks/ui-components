@@ -9,9 +9,10 @@ export interface JobDetailProps {
     data: any;
     applied: boolean;
     applyUrl: string;
+    alreadyApplied?: boolean;
 }
 
-export default function JobDetail({ data, applied, applyUrl }: any) {
+export default function JobDetail({ data, applied, applyUrl, alreadyApplied=false }: JobDetailProps) {
     const location = useLocation();
 
     const handleScroll = () => {
@@ -34,7 +35,7 @@ export default function JobDetail({ data, applied, applyUrl }: any) {
     }, [])
     return (
         <Box sx={{ ...style.container(location.pathname.split('/')[1] !== 'viewjob') }} id='job-detail-container'>
-            <JobTitle data={data} applied={applied} applyUrl={applyUrl}/>
+            <JobTitle data={data} applied={applied} applyUrl={applyUrl} alreadyApplied={alreadyApplied} />
 
             <Divider sx={{ borderColor: 'black' }} />
 

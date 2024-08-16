@@ -10,9 +10,10 @@ export interface JobTitleProps {
     data: any;
     applied: boolean;
     applyUrl: string;
+    alreadyApplied: boolean;
 }
 
-export default function JobTitle({ data, applyUrl, applied }) {
+export default function JobTitle({ data, applyUrl, applied, alreadyApplied }: JobTitleProps) {
     const isXS = useMediaQuery((theme: any) => theme.breakpoints.down('sm'))
     const navigate = useNavigate();
 
@@ -36,8 +37,9 @@ export default function JobTitle({ data, applyUrl, applied }) {
                                     // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
                                     navigate(`${applyUrl}${data.jobDetails._id}`)
                                 }}
+                                disabled={alreadyApplied}
                             >
-                                Apply
+                                {alreadyApplied ? 'Applied' : 'Apply'}
                             </Button>
                         </Box>
                     }
@@ -56,14 +58,15 @@ export default function JobTitle({ data, applyUrl, applied }) {
                             <Button sx={style.searchBtn}>
                                 Follow
                             </Button>
-                            <Button 
+                            <Button
                                 sx={style.searchBtn}
                                 onClick={() => {
                                     // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
                                     navigate(`${applyUrl}${data.jobDetails._id}`)
                                 }}
+                                disabled={alreadyApplied}
                             >
-                                Apply
+                                {alreadyApplied ? 'Applied' : 'Apply'}
                             </Button>
                         </Box>
                     </Box>

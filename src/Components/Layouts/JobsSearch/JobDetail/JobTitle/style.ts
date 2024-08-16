@@ -80,6 +80,9 @@ const style = {
         mx: '2px !important',
         ":hover": {
             backgroundColor: 'accent.main',
+        },
+        ":disabled": {
+            color: 'white'
         }
     },
     ai_recommend: {
