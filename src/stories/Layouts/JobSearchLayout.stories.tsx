@@ -43,7 +43,7 @@ export const primary: Story = {
         data: data.jobs,
         total: data.total,
         applyUrl: '/apply/',
-        appliedList: ['65fc7f59f6c8a424657e06f3'],
+        appliedList: ['66070dac8421868ef0643dc7'],
     },
     parameters: {
         reactRouter: reactRouterParameters({
