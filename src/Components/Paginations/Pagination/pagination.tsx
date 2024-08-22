@@ -25,15 +25,15 @@ export default function PaginationRounded({ count, handleChange, style }: Pagina
                             height: '32px',
                             borderRadius: '8px',
                             ":hover": {
-                                backgroundColor: 'accent.main',
-                                color: 'accent.contrastText'
+                                backgroundColor: '#3326C9',
+                                color: 'white'
                             }
                         },
                         ".Mui-selected": {
-                            backgroundColor: 'accent.main',
-                            color: 'accent.contrastText',
+                            backgroundColor: '#3326C9',
+                            color: 'white',
                             ":hover": {
-                                backgroundColor: 'accent.main',
+                                backgroundColor: '#3326C9',
                             }
                         }
                     },

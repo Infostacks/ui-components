@@ -5,7 +5,7 @@ const style = {
       top: "15px",
       bottom: "15px",
       padding: "24px 24px 0px",
-      backgroundColor: jobsPage ? "secondary.light" : "white",
+      backgroundColor: jobsPage ? "#E6ECFF" : "white",
       borderRadius: "16px",
       display: "flex",
       flexDirection: "column",

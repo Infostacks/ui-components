@@ -32,12 +32,12 @@ const ActiveButton = ({
   <Button
     sx={{
       padding: "8px",
-      color: isActive? 'accent.contrastText' : 'accent.main',
+      color: isActive? 'white' : '#3326C9',
       borderRadius: isRounded ? '50px' : "15px",
-      backgroundColor: isActive? 'accent.main' : 'transparent',
+      backgroundColor: isActive? '#3326C9' : 'transparent',
       textTransform: "capitalize",
       ":hover": {
-        backgroundColor: isActive? 'accent.main' : 'transparent',
+        backgroundColor: isActive? '#3326C9' : 'transparent',
       },
       ...sx,
     }}
