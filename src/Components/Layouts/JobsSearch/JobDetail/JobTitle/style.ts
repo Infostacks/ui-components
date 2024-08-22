@@ -73,13 +73,13 @@ const style = {
         px: '24px !important',
         py: '0px !important',
         // background: `linear-gradient(180deg, #5A50D3 0%, #3326C9 100%)`,
-        backgroundColor: 'accent.main',
+        backgroundColor: '#3326c9',
         color: 'accent.contrastText',
         // textTransform: 'none',
         height: '40px',
         mx: '2px !important',
         ":hover": {
-            backgroundColor: 'accent.main',
+            backgroundColor: '#3326c9',
         },
         ":disabled": {
             color: 'white'

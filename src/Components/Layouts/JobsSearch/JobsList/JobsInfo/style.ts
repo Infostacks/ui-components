@@ -1,7 +1,7 @@
 const style = {
     container: {
         cursor: 'pointer',
-        backgroundColor: 'secondary.light',
+        backgroundColor: '#E6ECFF',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -32,7 +32,7 @@ const style = {
         flexWrap: 'wrap',
         "& .MuiTypography-root" : {
             fontSize: '14px',
-            backgroundColor: 'secondary.main',
+            backgroundColor: '#D2DBFF',
             fontWeight: 500
         }
     },
