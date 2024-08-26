@@ -16,6 +16,7 @@ const meta: Meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ['autodocs'],
     argTypes: {
+        searchText: { control: 'text' },
         data: { control: 'object' },
         handlePageChange: {},
         total: { control: 'number' },
@@ -40,6 +41,35 @@ export const primary: Story = {
     //     )
     // ],
     args: {
+        data: data.jobs,
+        total: data.total,
+        applyUrl: '/apply/',
+        appliedList: ['66070dac8421868ef0643dc7'],
+    },
+    parameters: {
+        reactRouter: reactRouterParameters({
+            location: {
+                path: "/jobs",
+            },
+            routing: {
+                path: "/jobs",
+            },
+        }),
+    }
+};
+
+export const TextCorrect: Story = {
+    // decorators: [
+    //     (Story) => (
+    //         <ThemeProvider theme={theme}>
+    //             <MUIThemeProvider theme={theme}>
+    //                 <Story />
+    //             </MUIThemeProvider>
+    //         </ThemeProvider>
+    //     )
+    // ],
+    args: {
+        searchText: 'Software Engineer',
         data: data.jobs,
         total: data.total,
         applyUrl: '/apply/',

@@ -74,7 +74,7 @@ const style = {
         py: '0px !important',
         // background: `linear-gradient(180deg, #5A50D3 0%, #3326C9 100%)`,
         backgroundColor: '#3326c9',
-        color: 'accent.contrastText',
+        color: 'white',
         // textTransform: 'none',
         height: '40px',
         mx: '2px !important',
