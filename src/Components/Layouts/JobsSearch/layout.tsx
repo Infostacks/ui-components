@@ -6,6 +6,7 @@ import JobDetail from "./JobDetail";
 import { useMediaQuery } from "@mui/material";
 
 export interface JobsSearchLayoutProps {
+    searchText?: string;
     data: any;
     handlePageChange: (value: number) => void;
     total: number;
@@ -13,10 +14,10 @@ export interface JobsSearchLayoutProps {
     appliedList?: string[]
 }
 
-export default function JobsSearchLayout({ data, handlePageChange, total, applyUrl, appliedList = [] }: JobsSearchLayoutProps) {
+export default function JobsSearchLayout({ searchText, data, handlePageChange, total, applyUrl, appliedList = [] }: JobsSearchLayoutProps) {
     const [current, setCurrent] = React.useState(0);
     const isSmall = useMediaQuery('(max-width: 836px)');
-    
+
     return (
         <Box sx={style.jobsContainer}>
             <Box sx={style.layout}>
@@ -26,6 +27,7 @@ export default function JobsSearchLayout({ data, handlePageChange, total, applyU
                         <Box sx={{ width: !isSmall && data.length > current ? '30%' : '100%' }}>
 
                             <JobsList
+                                searchText={searchText}
                                 data={data}
                                 setCurrent={setCurrent}
                                 isSmallDev={isSmall}
