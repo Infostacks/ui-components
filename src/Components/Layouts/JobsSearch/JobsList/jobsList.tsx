@@ -5,8 +5,14 @@ import style from "./style";
 import PaginationRounded from "../../../Paginations/Pagination";
 import JobsInfo from "./JobsInfo/jobsInfo";
 
+export interface SearchText {
+    searchText: string,
+    autoCorrectText: string,
+}
+
 export interface JobsListProps {
-    searchText?: string,
+    // searchText?: string,
+    searchText?: SearchText,
     data: [any],
     setCurrent: Function,
     isSmallDev: boolean,
@@ -17,7 +23,9 @@ export interface JobsListProps {
 export default function JobsList({ searchText, data, setCurrent, isSmallDev, handlePageChange, total }: JobsListProps) {
     return (
         <Box sx={style.container}>
-            {searchText && <Typography sx={style.searchText}>Showing results for <b><u>{searchText}</u></b></Typography>}
+             {searchText && <Typography sx={style.searchText}>Showing results for <b><u>{searchText.autoCorrectText}</u></b></Typography>}
+            {searchText && <Typography sx={style.searchText}>Search instead for <b><u>{searchText.searchText}</u></b></Typography>}
+           
             <Typography sx={style.results}>AI finds {data.length} jobs for you</Typography>
             <Box sx={style.jobListContainer}>
                 {

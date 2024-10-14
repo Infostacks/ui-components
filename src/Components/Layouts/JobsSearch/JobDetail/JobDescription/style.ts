@@ -43,6 +43,15 @@ const style = {
        alignItems: 'start',
        gap: '8px',
     },
+    jobInfoSkillsRow: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'start',
+        alignItems: 'start',
+        gap: '8px',
+        mb:'8px',
+      
+     },
     jobInfoTitle: {
         fontWeight: 700,
     },
@@ -52,7 +61,8 @@ const style = {
         "& .MuiTypography-root": {
             backgroundColor: "#D2DBFF",
             padding: '4px 8px',
-        }
+        },
+        flexWrap: 'wrap',
     },
     jobDetailsContainer: {
         display: 'flex',

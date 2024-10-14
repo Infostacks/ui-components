@@ -2,11 +2,18 @@ import React from "react";
 import Button from '@mui/material/Button';
 import figmaIcons from "../../../../../Utils/Icons/figma";
 
-export default function JobOptions({ }) {
+export interface JobOptionsProps{
+    save?:boolean
+    handleSave?:()=>void
+    handleShare?:()=>void
+}
+
+export default function JobOptions({save=false,handleSave ,handleShare}:JobOptionsProps) {
 
     const copyClipboard = () => {
         // Copy the text inside the text field
         // navigator.clipboard.writeText();
+        handleShare && handleShare()
     }
 
     return (
@@ -14,7 +21,7 @@ export default function JobOptions({ }) {
             <Button
                 onClick={copyClipboard}
             >{figmaIcons.shareIcon()}</Button>
-            <Button>{figmaIcons.bookmarkIcon()}</Button>
+            <Button onClick={handleSave}>{figmaIcons.bookmarkIcon(save?'fill':'')}</Button>
             <Button>{figmaIcons.moreHorizontalIcon()}</Button>
         </>
     )

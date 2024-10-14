@@ -1,9 +1,10 @@
 {
   "name": "@infostacks/ui-components",
-  "version": "1.3.18",
+  "version": "1.3.19",
   "homepage": "https://infostacks.github.io/ui-components",
   "scripts": {
     "rollup": "rollup -c",
+    "build": "npm run rollup",
     "test": "echo \"Bypassing tests for now\" && exit 0",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

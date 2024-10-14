@@ -82,7 +82,8 @@ const style = {
             backgroundColor: '#3326c9',
         },
         ":disabled": {
-            color: 'white'
+            color: 'white',
+            bgcolor:'#96b8e0'
         }
     },
     ai_recommend: {

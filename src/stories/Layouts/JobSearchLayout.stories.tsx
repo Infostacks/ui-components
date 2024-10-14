@@ -16,7 +16,8 @@ const meta: Meta = {
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ['autodocs'],
     argTypes: {
-        searchText: { control: 'text' },
+        // searchText: { control: 'text' },
+        searchText: { control: 'object' },
         data: { control: 'object' },
         handlePageChange: {},
         total: { control: 'number' },
@@ -69,7 +70,7 @@ export const TextCorrect: Story = {
     //     )
     // ],
     args: {
-        searchText: 'Software Engineer',
+        searchText: {searchText:'Soft Engner',autoCorrectText:'Software Engineer'},
         data: data.jobs,
         total: data.total,
         applyUrl: '/apply/',
