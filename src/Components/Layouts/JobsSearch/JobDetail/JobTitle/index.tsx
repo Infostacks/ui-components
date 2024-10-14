@@ -11,9 +11,11 @@ export interface JobTitleProps {
     applied: boolean;
     applyUrl: string;
     alreadyApplied: boolean;
+    handleSave?: () => void;
+    handleShare?:()=>void;
 }
 
-export default function JobTitle({ data, applyUrl, applied, alreadyApplied }: JobTitleProps) {
+export default function JobTitle({ data, applyUrl, applied, alreadyApplied,handleSave,handleShare}: JobTitleProps) {
     const isXS = useMediaQuery((theme: any) => theme.breakpoints.down('sm'))
     const navigate = useNavigate();
 
@@ -35,7 +37,8 @@ export default function JobTitle({ data, applyUrl, applied, alreadyApplied }: Jo
                             <Button sx={style.searchBtn}
                                 onClick={() => {
                                     // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
-                                    navigate(`${applyUrl}${data.jobDetails._id}`)
+                                    // navigate(`${applyUrl}${data.jobDetails._id}`)
+                                    window.open(`${applyUrl}${data.jobDetails._id}`)
                                 }}
                                 disabled={alreadyApplied}
                             >
@@ -51,7 +54,7 @@ export default function JobTitle({ data, applyUrl, applied, alreadyApplied }: Jo
                     <Box sx={style.activityBox}>
                         {
                             !isXS && <>
-                                <JobOptions />
+                                <JobOptions save={data?.saved} handleSave={handleSave} handleShare={handleShare}/>
                             </>
                         }
                         <Box sx={style.orgActivityLarge}>
@@ -62,7 +65,8 @@ export default function JobTitle({ data, applyUrl, applied, alreadyApplied }: Jo
                                 sx={style.searchBtn}
                                 onClick={() => {
                                     // window.open(`${process.env.REACT_APP_CANDIDATE_PANEL}/#/jobs/apply/${data.jobDetails._id}`)
-                                    navigate(`${applyUrl}${data.jobDetails._id}`)
+                                    // navigate(`${applyUrl}${data.jobDetails._id}`)
+                                    window.open(`${applyUrl}${data.jobDetails._id}`)
                                 }}
                                 disabled={alreadyApplied}
                             >

@@ -8,16 +8,18 @@ import StarterKit from "@tiptap/starter-kit";
 
 export interface JobDescriptionProps {
     data: any
+    handleSave?: () => void;
+    handleShare?: () => void;
 }
 
-export default function JobDescription({ data }: JobDescriptionProps) {
+export default function JobDescription({ data,handleSave,handleShare }: JobDescriptionProps) {
     const isXS = useMediaQuery((theme: any) => theme?.breakpoints?.down('sm'))
 
     return (
         <Box sx={style.container} id="job-detail-expandable-container">
             <Box sx={style.jobDetailText}>
                 <Typography sx={style.jobDetail}>Job Details</Typography>
-                <span>{isXS && <JobOptions />}</span>
+                <span>{isXS && <JobOptions save={data?.saved}  handleSave={handleSave} handleShare={handleShare}/>}</span>
             </Box>
 
             <Box sx={style.jobInfoContainer}>
@@ -59,7 +61,17 @@ export default function JobDescription({ data }: JobDescriptionProps) {
                     </Box>
                 </Box>
             </Box>
-
+            <Box sx={style.jobInfoSkillsRow}>
+                    <Typography sx={style.jobInfoTitle}>Skills: </Typography>
+                    <Box sx={style.jobInfoStats}>
+                    {
+                            data.jobDetails.skills &&
+                            data.jobDetails.skills.map((type) => (
+                                <Typography key={type} >{type}</Typography>
+                            ))
+                        }
+                    </Box>
+                </Box>
 
             <Box sx={style.jobDetailsContainer}>
                 <Box sx={style.jobDetailsCRow}>

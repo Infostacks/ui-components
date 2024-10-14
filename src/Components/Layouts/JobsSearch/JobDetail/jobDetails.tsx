@@ -10,9 +10,11 @@ export interface JobDetailProps {
     applied: boolean;
     applyUrl: string;
     alreadyApplied?: boolean;
+    handleSave?: () => void;
+    handleShare?: () => void;
 }
 
-export default function JobDetail({ data, applied, applyUrl, alreadyApplied=false }: JobDetailProps) {
+export default function JobDetail({ data, applied, applyUrl, alreadyApplied=false ,handleSave,handleShare}: JobDetailProps) {
     const location = useLocation();
 
     const handleScroll = () => {
@@ -35,11 +37,11 @@ export default function JobDetail({ data, applied, applyUrl, alreadyApplied=fals
     }, [])
     return (
         <Box sx={{ ...style.container(location.pathname.split('/')[1] !== 'viewjob') }} id='job-detail-container'>
-            <JobTitle data={data} applied={applied} applyUrl={applyUrl} alreadyApplied={alreadyApplied} />
+            <JobTitle data={data} applied={applied} applyUrl={applyUrl} alreadyApplied={alreadyApplied} handleSave={handleSave} handleShare={handleShare}/>
 
             <Divider sx={{ borderColor: 'black' }} />
 
-            <JobDescription data={data} />
+            <JobDescription data={data}  handleSave={handleSave} handleShare={handleShare} />
         </Box>
     )
 }
