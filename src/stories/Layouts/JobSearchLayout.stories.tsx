@@ -70,7 +70,7 @@ export const TextCorrect: Story = {
     //     )
     // ],
     args: {
-        searchText: {searchText:'Soft Engner',autoCorrectText:'Software Engineer'},
+        searchText: {searchText:'Soft Engnerr',autoCorrectText:'Software Engineer'},
         data: data.jobs,
         total: data.total,
         applyUrl: '/apply/',
