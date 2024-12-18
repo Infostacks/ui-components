@@ -12,6 +12,11 @@ export interface DashboardLayoutProps {
   activeSection: string;
   handleSectionClick: (section: string) => void;
   isSmallScreen: boolean;
+  handleNotification:()=>void;
+  handleChat:()=>void,
+  unreadNotificationCount:Number;
+  unreadChatCount:Number;
+
 }
 
 const R_DashboardLayout = (
@@ -20,7 +25,12 @@ const R_DashboardLayout = (
     dashboardItemList, 
     activeSection, 
     handleSectionClick, 
-    isSmallScreen
+    isSmallScreen,
+    handleNotification,
+    handleChat,
+    unreadNotificationCount,
+    unreadChatCount
+
   }:DashboardLayoutProps) => {
   return (
     <Box
@@ -34,7 +44,7 @@ const R_DashboardLayout = (
         listItems={dashboardItemList}
       />
       <Box sx={style.parentBoxDashBoard}>
-        <DashboardNavBar />
+        <DashboardNavBar handleChat={handleChat} handleNotification={handleNotification} unreadChatCount={unreadChatCount} unreadNotificationCount={unreadNotificationCount}/>
         <Box sx={style.chartParentContainerBox}>
           <Outlet />
         </Box>
