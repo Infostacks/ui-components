@@ -6,7 +6,7 @@ import JobDetail from "./JobDetail";
 import { useMediaQuery } from "@mui/material";
 
 export interface JobsSearchLayoutProps {
-    searchText?: string;
+    searchText?: any;
     data: any;
     handlePageChange: (value: number) => void;
     total: number;

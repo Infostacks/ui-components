@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import {theme as themeVar} from './default'
+import { theme as themeVar } from './default'
 
 const defaultTheme = createTheme(themeVar(''));
 

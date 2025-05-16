@@ -15,6 +15,7 @@ export interface DashboardLayoutProps {
   handleChat: () => void;
   unreadNotificationCount: number;
   unreadChatCount: number;
+  toggleTheme: () => void;
 }
 
 const R_DashboardLayout = ({
@@ -26,7 +27,8 @@ const R_DashboardLayout = ({
   handleNotification,
   handleChat,
   unreadNotificationCount,
-  unreadChatCount
+  unreadChatCount,
+  toggleTheme
 }: DashboardLayoutProps) => {
   return (
     <Box
@@ -48,6 +50,8 @@ const R_DashboardLayout = ({
       >
         <DashboardNavBar
           handleChat={handleChat}
+          toggleTheme={toggleTheme}
+          title={title}
           handleNotification={handleNotification}
           unreadChatCount={unreadChatCount}
           unreadNotificationCount={unreadNotificationCount}
@@ -75,7 +79,6 @@ const R_DashboardLayout = ({
           <RSidebar
             activeSection={activeSection}
             handleSectionClick={handleSectionClick}
-            title={title}
             isSmallScreen={isSmallScreen}
             listItems={dashboardItemList}
           />

@@ -23,20 +23,13 @@ import {
     Person,
     WorkOutline,
     Search,
-    NightsStay
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import ThemeModeContext from "Context/ThemeContext";
+// import ThemeModeContext from "Context/ThemeContext";
 import StorybookContext from "../../../Context/sampleContext";
 import NavbarBreadcrumbs from '../../Breadcrumbs';
 
-// Type definitions
-interface BreadcrumbItem {
-    label: string;
-    href?: string;
-    isActive?: boolean;
-    icon?: React.ReactNode;
-}
+
 
 interface CustomMenuItem {
     label: string;
@@ -48,10 +41,10 @@ interface CustomMenuItem {
 interface DashboardNavBarProps {
     handleNotification: () => void;
     handleChat: () => void;
+    toggleTheme: () => void;
     unreadNotificationCount: number;
     unreadChatCount: number;
-    breadcrumbs?: BreadcrumbItem[];
-    menuItems?: CustomMenuItem[];
+    title: string;
 }
 
 const gradientAnimation = keyframes`
@@ -102,7 +95,7 @@ const ProfileButton = styled(IconButton)(({ theme }) => ({
 const AppTitle = styled(Typography)(({ theme }) => ({
     fontWeight: 700,
     letterSpacing: '-0.5px',
-    background: theme.palette.custom?.accentGradient || 'linear-gradient(135deg, #6e48aa, #00e5ff)',
+    background: theme.palette?.custom?.accentGradient || 'linear-gradient(135deg, #6e48aa, #00e5ff)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     position: 'relative',
@@ -124,18 +117,18 @@ const SearchField = styled(TextField)(({ theme }) => ({
     '& .MuiOutlinedInput-root': {
         height: 44,
         borderRadius: '12px',
-        backgroundColor: theme.palette.custom?.searchBackground ||
+        backgroundColor: theme.palette?.custom?.searchBackground ||
             (theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)'),
         border: `1px solid ${theme.palette.divider}`,
         transition: 'all 0.3s ease',
         '&:hover': {
             borderColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.secondary.main,
-            boxShadow: `0 0 0 2px ${theme.palette.custom?.searchHoverShadow ||
+            boxShadow: `0 0 0 2px ${theme.palette?.custom?.searchHoverShadow ||
                 (theme.palette.mode === 'dark' ? 'rgba(110,72,170,0.2)' : 'rgba(0,229,255,0.2)')}`
         },
         '&.Mui-focused': {
             borderColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.secondary.main,
-            boxShadow: `0 0 0 3px ${theme.palette.custom?.searchFocusShadow ||
+            boxShadow: `0 0 0 3px ${theme.palette?.custom?.searchFocusShadow ||
                 (theme.palette.mode === 'dark' ? 'rgba(110,72,170,0.3)' : 'rgba(0,229,255,0.3)')}`
         }
     },
@@ -157,33 +150,33 @@ function hexToRgb(hex: string): string | null {
 
 const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
     handleNotification,
+    title,
     handleChat,
     unreadNotificationCount,
-    unreadChatCount,
-    breadcrumbs,
-    menuItems
+    toggleTheme,
+    unreadChatCount
 }) => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const { currentTheme, updateColorMode } = useContext(ThemeModeContext);
+    // const { currentTheme, updateColorMode } = useContext(ThemeModeContext);
     const { userAuth, signOutContext } = useContext(StorybookContext);
     const theme = useTheme();
     const isMobile = useMediaQuery('(max-width:1000px)');
     const open = Boolean(anchorEl);
 
-    const toggleTheme = () => {
-        const currentMode = currentTheme?.palette?.mode || 'light';
-        let nextMode;
-        
-        if (currentMode === 'light') {
-            nextMode = 'dark';
-        } else if (currentMode === 'dark') {
-            nextMode = 'black';
-        } else {
-            nextMode = 'light';
-        }
-        
-        updateColorMode(nextMode);
-    };
+    // const toggleTheme = () => {
+    //     // const currentMode = currentTheme?.palette?.mode || 'light';
+    //     // let nextMode;
+
+    //     // if (currentMode === 'light') {
+    //     //     nextMode = 'dark';
+    //     // } else if (currentMode === 'dark') {
+    //     //     nextMode = 'black';
+    //     // } else {
+    //     //     nextMode = 'light';
+    //     // }
+
+    //     // updateColorMode(nextMode);
+    // };
 
     const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -192,7 +185,7 @@ const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
-    
+
     const handleLogout = () => {
         signOutContext();
         handleMenuClose();
@@ -209,19 +202,20 @@ const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
         { label: 'Logout', onClick: handleLogout, divider: true }
     ];
 
-    const finalMenuItems = menuItems || defaultMenuItems;
+    const finalMenuItems = defaultMenuItems;
 
     const getThemeIcon = () => {
-        const currentMode = currentTheme?.palette?.mode || 'light';
-        
+        const currentMode = theme?.palette?.mode || 'light';
+
         switch (currentMode) {
             case 'dark':
                 return <Brightness7 sx={{ color: '#ffc107', fontSize: '24px' }} />;
-            case 'black':
-                return <NightsStay sx={{ color: '#ffffff', fontSize: '24px' }} />;
+
             default: // light
                 return <Brightness4 sx={{ color: theme.palette.text.secondary, fontSize: '24px' }} />;
         }
+
+
     };
 
     return (
@@ -245,12 +239,12 @@ const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
                             transform: 'rotate(-15deg)'
                         }} />
                         <AppTitle variant="h6">
-                            Candidate
+                            {title}
                         </AppTitle>
                     </Box>
 
                     {!isMobile && (
-                        <NavbarBreadcrumbs breadcrumbs={breadcrumbs} />
+                        <NavbarBreadcrumbs />
                     )}
                 </Box>
 
@@ -291,12 +285,12 @@ const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
                     {!isMobile && (
                         <>
                             <IconButton color="inherit" onClick={handleChat}>
-                                <Badge 
-                                    badgeContent={unreadChatCount} 
+                                <Badge
+                                    badgeContent={unreadChatCount}
                                     color="error"
                                     sx={{
                                         '& .MuiBadge-badge': {
-                                            backgroundColor: theme.palette.accent?.main,
+                                            backgroundColor: theme.palette?.accent?.main,
                                             color: '#fff',
                                         },
                                     }}
@@ -309,12 +303,12 @@ const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
                             </IconButton>
 
                             <IconButton color="inherit" onClick={handleNotification}>
-                                <Badge 
-                                    badgeContent={unreadNotificationCount} 
+                                <Badge
+                                    badgeContent={unreadNotificationCount}
                                     color="error"
                                     sx={{
                                         '& .MuiBadge-badge': {
-                                            backgroundColor: theme.palette.accent?.main,
+                                            backgroundColor: theme.palette?.accent?.main,
                                             color: '#fff',
                                         },
                                     }}
@@ -338,7 +332,7 @@ const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
                             }}
                             alt={userAuth?.displayName || 'User'}
                             src={userAuth?.photoURL || undefined}
-                            referrerPolicy="no-referrer"
+                        // referrerPolicy="no-referrer"
                         >
                             {!userAuth?.photoURL && <Person />}
                         </Avatar>
@@ -373,8 +367,8 @@ const DashboardNavBar: React.FC<DashboardNavBarProps> = ({
                         }}
                     >
                         {finalMenuItems.map((item, index) => (
-                            <MuiMenuItem 
-                                key={index} 
+                            <MuiMenuItem
+                                key={index}
                                 onClick={item.onClick}
                                 divider={item.divider}
                             >
