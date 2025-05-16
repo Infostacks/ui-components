@@ -1,14 +1,13 @@
 const style = {
   layoutContainer:{
-    bgcolor: "white",
     display: "flex",
+    flexDirection:"column",
     width: '100%'
   },
   parentBoxDashBoard :{
     width: '100%',
     display: "fit-content",
     alignItems: "center",
-    flexDirection: "column",
     transition: 'width 0.6s ease-in-out',
   },
   chartParentContainerBox:{
