@@ -6,13 +6,13 @@ const style = {
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
   },
-  link: {
-    color: "black",
+  link: (theme) => ({
+    color: theme.palette.text.primary,
     textDecoration: "none",
-    fontSize: "20px",
-    fontWeight: 600,
-    lineHeight: "30px",
-  },
+    fontSize: "16px",
+    fontWeight: 400,
+    lineHeight: "24px",
+  }),
 };
 
 export default style;
