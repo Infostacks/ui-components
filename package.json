@@ -117,5 +117,9 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "framer-motion": "^12.12.1",
+    "lodash": "^4.17.21"
+  }
 }

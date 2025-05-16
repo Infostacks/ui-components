@@ -10,12 +10,19 @@ import {
     styled,
     useTheme,
     Tooltip,
-    Collapse
 } from "@mui/material";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { DashboardItem } from '../../../Utils/Constants/dashboardItemList';
 import { ExpandLess, ExpandMore, ChevronLeft } from "@mui/icons-material";
 import { motion, AnimatePresence } from 'framer-motion';
+
+export interface SideBarProps {
+    onClick?: Function;
+    activeSection: string;
+    handleSectionClick: (section: string) => void;
+    listItems: DashboardItem[],
+    isSmallScreen: boolean
+  }
 
 // Styled Components
 const GlassBox = styled(motion.div)(({ theme }) => ({
@@ -97,8 +104,8 @@ function hexToRgb(hex: string): string {
     return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '0, 0, 0';
 }
 
+
 const SideBar: React.FC<SideBarProps> = ({
-    title,
     handleSectionClick,
     listItems,
     isSmallScreen = false
@@ -124,7 +131,7 @@ const SideBar: React.FC<SideBarProps> = ({
         if (location.pathname === item.path) return true;
         
         // Sub-item match
-        if (item.subItems?.some(subItem => location.pathname === subItem.path)) return true;
+        // if (item?.subItems?.some(subItem => location.pathname === subItem.path)) return true;
         
         // Special case for dashboard (only match exactly)
         if (item.path === '/dashboard') {
@@ -165,11 +172,12 @@ const SideBar: React.FC<SideBarProps> = ({
                     transform: isActive ? 'scale(1.1)' : 'scale(1)'
                 }
             }}>
-                {typeof IconComponent === 'function' ? 
+                {/* {typeof IconComponent === 'function' ? 
                     <IconComponent /> : 
                     React.isValidElement(IconComponent) ? 
                     React.cloneElement(IconComponent) : 
-                    IconComponent}
+                    IconComponent} */}
+                    {IconComponent(iconColor)}
             </Box>
         );
     };
@@ -204,12 +212,12 @@ const SideBar: React.FC<SideBarProps> = ({
                 }}
                 onClick={handleProfileClick}
             >
-                <AvatarContainer
+                {/* <AvatarContainer
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                     {title.charAt(0).toUpperCase()}
-                </AvatarContainer>
+                </AvatarContainer> */}
                 
                 <AnimatePresence>
                     {!collapsed && (
@@ -231,7 +239,7 @@ const SideBar: React.FC<SideBarProps> = ({
                                 height: '100%',
                                 width: '100%',
                             }}>
-                                <UserName variant="body1">{title}</UserName>
+                                <UserName variant="body1">candidate</UserName>
                                 <Typography variant="caption" color="text.secondary" sx={{
                                     display: 'block',
                                     mt: 0.5,
@@ -284,11 +292,14 @@ const SideBar: React.FC<SideBarProps> = ({
                                         }
                                     }}
                                     onClick={() => {
-                                        if (item.subItems) {
-                                            if (!collapsed) toggleExpand(item.path);
-                                        } else {
-                                            handleSectionClick(item.path);
-                                        }
+                                        handleSectionClick(item.section);
+                                        navigate(item.path)
+
+                                        // if (item.subItems) {
+                                        //     if (!collapsed) toggleExpand(item.path);
+                                        // } else {
+                                        //     handleSectionClick(item.path);
+                                        // }
                                     }}
                                 >
                                     <ListItemIcon sx={{
@@ -329,7 +340,7 @@ const SideBar: React.FC<SideBarProps> = ({
                                                         opacity: collapsed ? 0 : 1
                                                     }}
                                                 />
-                                                {item.subItems && (
+                                                {item.section && (
                                                     expandedItems[item.path] 
                                                         ? <ExpandLess sx={{ ml: 'auto' }} /> 
                                                         : <ExpandMore sx={{ ml: 'auto' }} />
@@ -342,7 +353,7 @@ const SideBar: React.FC<SideBarProps> = ({
                         </Tooltip>
 
                         {/* Nested items */}
-                        {!collapsed && item.subItems && expandedItems[item.path] && (
+                        {/* {!collapsed && item.section && expandedItems[item.path] && (
                             <Collapse in={expandedItems[item.path]} timeout="auto" unmountOnExit>
                                 <Box sx={{
                                     pl: 4,
@@ -381,7 +392,7 @@ const SideBar: React.FC<SideBarProps> = ({
                                     ))}
                                 </Box>
                             </Collapse>
-                        )}
+                        )} */}
                     </React.Fragment>
                 ))}
             </List>
