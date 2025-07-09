@@ -16,6 +16,7 @@ export interface DashboardLayoutProps {
   unreadNotificationCount: number;
   unreadChatCount: number;
   toggleTheme: () => void;
+  userTitle: string;
 }
 
 const R_DashboardLayout = ({
@@ -28,8 +29,10 @@ const R_DashboardLayout = ({
   handleChat,
   unreadNotificationCount,
   unreadChatCount,
-  toggleTheme
+  toggleTheme,
+  userTitle
 }: DashboardLayoutProps) => {
+  
   return (
     <Box
       sx={{
@@ -71,8 +74,7 @@ const R_DashboardLayout = ({
           sx={{
             width:'fit-content',
             flexShrink: 0,
-            px: "15px",
-            py: 2,
+            px: "16px",
             overflowY: "auto",
           }}
         >
@@ -81,6 +83,7 @@ const R_DashboardLayout = ({
             handleSectionClick={handleSectionClick}
             isSmallScreen={isSmallScreen}
             listItems={dashboardItemList}
+            userTitle={userTitle}
           />
         </Box>
 
@@ -89,7 +92,6 @@ const R_DashboardLayout = ({
           sx={{
             flexGrow: 1,
             overflowY: "auto",
-            p:"15px",
             height: "100%",
             width:"100%",
             scrollbarWidth: "none", // Firefox
