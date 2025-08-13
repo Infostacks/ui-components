@@ -24,7 +24,8 @@
         handleSectionClick: (section: string) => void;
         listItems: DashboardItem[],
         isSmallScreen: boolean,
-        userTitle:string
+        userTitle:string,
+        title:string
       }
     
     // Styled Components
@@ -141,6 +142,7 @@
     const SideBar: React.FC<SideBarProps>= ({
         handleSectionClick,
         listItems,
+        title,
         userTitle,
         isSmallScreen = false
     }) => {
@@ -166,9 +168,12 @@
         };
     
         const handleProfileClick = () => {
-            navigate('/dashboard/profile');
+            if (title === 'Candidate') {
+                navigate('/candidate/profile');
+            } else {
+                navigate('/organization/profile');
+            }
         };
-    
         const renderItemIcon = (item: DashboardItem) => {
             const IconComponent = item.icon;
             const isActive = isItemActive(item);
