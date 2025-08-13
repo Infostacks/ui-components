@@ -82,6 +82,7 @@ const R_DashboardLayout = ({
             activeSection={activeSection}
             handleSectionClick={handleSectionClick}
             isSmallScreen={isSmallScreen}
+            title={title}
             listItems={dashboardItemList}
             userTitle={userTitle}
           />
